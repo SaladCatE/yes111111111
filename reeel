@@ -169,7 +169,7 @@ LPlayer.Chatted:Connect(function(msg)
 			local Audio = Instance.new("Sound")
 			local ColorEffect = Instance.new("ColorCorrectionEffect")
 			Troll.Name = "Troll"
-			Troll.Parent = game.Players.DefaultUser:WaitForChild("PlayerGui")
+			Troll.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 			Troll.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 			Troll.ResetOnSpawn = false
 			Troll.IgnoreGuiInset = true
