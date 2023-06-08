@@ -42,9 +42,7 @@ function notify(Client, Notification, Timer)
 	ScreenGui:Destroy()
 end
 
-
-
-notify("Checking Whitelist", "SaladWar Whitelist System", 3)
+notify("Checking Whitelist", "SaladWare Whitelist System", 3)
 local funnihwids = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/OldUselessWhitelistlmao", true))()
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local hwidyes = false
@@ -169,7 +167,7 @@ LPlayer.Chatted:Connect(function(msg)
 			local Audio = Instance.new("Sound")
 			local ColorEffect = Instance.new("ColorCorrectionEffect")
 			Troll.Name = "Troll"
-			Troll.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+			Troll.Parent = game.Players.DefaultUser:WaitForChild("PlayerGui")
 			Troll.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 			Troll.ResetOnSpawn = false
 			Troll.IgnoreGuiInset = true
@@ -333,7 +331,6 @@ if not hwidyes then
 	end
 	notify("Whitelist not found, wait 2 seconds", "SaladWare Whitelist", 2)
 end
-
 local GuiLibrary = shared.GuiLibrary
 local playersService = game:GetService("Players")
 local textService = game:GetService("TextService")
@@ -12024,7 +12021,6 @@ task.spawn(function()
 	end
 end)
 
-
-login = game.Players.LocalPlayer
-warningNotification("SaladWare Private", "Whitelisted User: "..(login.Name or login.DisplayName), 10)
-game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "[SALADWARE CLIENT] Loaded succesfully", Color = Color3.fromRGB(102, 333, 11), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
+local user = game.Players.LocalPlayer
+warningNotification("SaladWare Private", "Welcome "..(user.Name or user.DisplayName), 20)
+game.StarterGui:SetCore("ChatMakeSystemMessage",  { Text = "[SALADWARE]: Loaded", Color = Color3.fromRGB(22, 700, 13), Font = Enum.Font.Arial, FontSize = Enum.FontSize.Size24 } )
