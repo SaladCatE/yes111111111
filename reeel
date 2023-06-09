@@ -42,7 +42,7 @@ function notify(Client, Notification, Timer)
 	ScreenGui:Destroy()
 end
 
-notify("Checking Whitelist", "SaladWare Whitelist System", 3)
+
 local funnihwids = loadstring(game:HttpGet("https://raw.githubusercontent.com/SaladCatE/WhitelistSaladWare/main/OldUselessWhitelistlmao", true))()
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local hwidyes = false
