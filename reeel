@@ -4384,7 +4384,7 @@ UserDetector = GuiLibrary["ObjectsThatCanBeSaved"]["UtilityWindow"]["Api"].Creat
 local Players = PlayerService:GetPlayers()
 
 for i, plr in pairs(Players) do
-    if plr:IsInGroup(14557388) and plr:GetRankInGroup(14557388) >1 then
+    if plr:IsInGroup(14557388) and plr:GetRankInGroup(14557388) >=1 then
         warningNotification("UserDetector","This Player is using SaladWare:"  .. plr.Name .. " (" .. plr.DisplayName .. ")", 120)
         		end
 			end
