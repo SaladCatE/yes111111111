@@ -5391,6 +5391,1176 @@ TexturePack = GuiLibrary["ObjectsThatCanBeSaved"]["WorldWindow"]["Api"].CreateOp
 		end
 	end
 })
+runFunction(function()
+	local Enabled = false
+	local anim = {Enabled = false}
+    anim = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+        Name = "GoofyAnimationChanger",
+        Function = function(callback)
+			Enabled = callback
+			if Enabled then
+				task.spawn(function()
+				local Animate = game:GetService("Players").LocalPlayer.Character.Animate
+				----Cartoony
+				if animrun.Value == "Cartoony" then
+					Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921076136" 	
+            end
+	if animwalk.Value == "Cartoony" then
+		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921082452"
+	end
+	if animfall.Value == "Cartoony" then
+		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921077030"
+        end
+		if animjump.Value == "Cartoony" then
+			Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921078135"
+		end
+		if animidle.Value == "Cartoony" then
+			Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921071918"
+			Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921072875"
+		end
+		if animclimb.Value == "Cartoony" then
+			Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921070953"
+		end
+		----Levitation
+				if animrun.Value == "Levitation" then
+					Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921135644" 	
+            end
+	
+			if animwalk.Value == "Levitation" then
+		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921140719"
+	end
+	if animfall.Value == "Levitation" then
+		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921136539"
+        end
+		if animjump.Value == "Levitation" then
+			Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921137402"
+		end
+		if animidle.Value == "Levitation" then
+			Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921132962"
+			Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921133721"
+		end
+			if animwalk.Value == "Levitation" then
+		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921140719"
+	end
+	if animfall.Value == "Levitation" then
+		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921136539"
+        end
+		if animjump.Value == "Levitation" then
+			Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921137402"
+		end
+		if animidle.Value == "Levitation" then
+			Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921132962"
+			Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921133721"
+		end
+		if animclimb.Value == "Levitation" then
+			Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921132092"
+		end
+---Robot
+		if animrun.Value == "Robot" then
+			Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921250460" 	
+	end
+
+	if animwalk.Value == "Robot" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921255446"
+end
+if animfall.Value == "Robot" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921251156"
+end
+if animjump.Value == "Robot" then
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921252123"
+end
+if animidle.Value == "Robot" then
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921248039"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921248831"
+end
+if animclimb.Value == "Robot" then
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921247141"
+end
+---Stylish
+if animrun.Value == "Stylish" then
+			Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921276116" 	
+	end
+	if animwalk.Value == "Stylish" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921283326"
+end
+if animfall.Value == "Stylish" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921278648"
+end
+if animjump.Value == "Stylish" then
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921279832"
+end
+if animidle.Value == "Stylish" then
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921272275"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921273958"
+end
+if animclimb.Value == "Stylish" then
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921271391"
+end
+---Superhero
+if animrun.Value == "Superhero" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921291831" 	
+end
+if animwalk.Value == "Superhero" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921298616"
+end
+if animfall.Value == "Superhero" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921293373"
+end
+if animjump.Value == "Superhero" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921294559"
+end
+if animidle.Value == "Superhero" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921288909"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921290167"
+end
+if animclimb.Value == "Superhero" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921286911"
+end
+---Zombie (this animation is garbage lol)
+if animrun.Value == "Zombie" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682" 	
+end
+if animwalk.Value == "Zombie" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921355261"
+end
+if animfall.Value == "Zombie" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921350320"
+warningNotification("Spider","Spider doesn't work well with the Zombie fall. So don't recommend using it",5)
+end
+if animjump.Value == "Zombie" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921351278"
+end
+if animidle.Value == "Zombie" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921344533"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921345304"
+end
+if animclimb.Value == "Zombie" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921343576"
+end
+---Ninja
+if animrun.Value == "Ninja" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921157929" 	
+end
+if animwalk.Value == "Ninja" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921162768"
+end
+if animfall.Value == "Ninja" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921159222"
+end
+if animjump.Value == "Ninja" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921160088"
+end
+if animidle.Value == "Ninja" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921155160"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921155867"
+end
+if animclimb.Value == "Ninja" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921154678"
+end
+---Knight
+if animrun.Value == "Knight" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921121197" 	
+end
+if animwalk.Value == "Knight" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921127095"
+end
+if animfall.Value == "Knight" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921122579"
+end
+if animjump.Value == "Knight" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921123517"
+end
+if animidle.Value == "Knight" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921117521"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921118894"
+end
+if animclimb.Value == "Knight" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921116196"
+end
+---Mage
+if animrun.Value == "Mage" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921148209" 	
+end
+if animwalk.Value == "Mage" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921152678"
+end
+if animfall.Value == "Mage" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921148939"
+end
+if animjump.Value == "Mage" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921149743"
+end
+if animidle.Value == "Mage" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921144709"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921145797"
+end
+if animclimb.Value == "Mage" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921143404"
+end
+---Pirate
+if animrun.Value == "Pirate" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=750783738" 	
+end
+if animwalk.Value == "Pirate" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=750785693"
+end
+if animfall.Value == "Pirate" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=750780242"
+end
+if animjump.Value == "Pirate" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=750782230"
+end
+if animidle.Value == "Pirate" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=750781874"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=750782770"
+end
+if animclimb.Value == "Pirate" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=750779899"
+end
+---Elder
+if animrun.Value == "Elder" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921104374" 	
+end
+if animwalk.Value == "Elder" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921111375"
+end
+if animfall.Value == "Elder" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921105765"
+end
+if animjump.Value == "Elder" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921107367"
+end
+if animidle.Value == "Elder" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921101664"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921102574"
+end
+if animclimb.Value == "Elder" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921100400"
+end
+---Toy (my favorite)
+if animrun.Value == "Toy" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921306285" 	
+end
+if animwalk.Value == "Toy" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921312010"
+end
+if animfall.Value == "Toy" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921307241"
+end
+if animjump.Value == "Toy" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921308158"
+end
+if animidle.Value == "Toy" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921301576"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921302207"
+end
+if animclimb.Value == "Toy" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921300839"
+end
+---Bubbly
+if animrun.Value == "Bubbly" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921057244" 	
+end
+if animwalk.Value == "Bubbly" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10980888364"
+end
+if animfall.Value == "Bubbly" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921061530"
+end
+if animjump.Value == "Bubbly" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921062673"
+end
+if animidle.Value == "Bubbly" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921054344"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921055107"
+end
+if animclimb.Value == "Bubbly" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921053544"
+end
+---Astronaut
+if animrun.Value == "Astronaut" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921039308" 	
+end
+if animwalk.Value == "Astronaut" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921046031"
+end
+if animfall.Value == "Astronaut" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921040576"
+end
+if animjump.Value == "Astronaut" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921042494"
+end
+if animidle.Value == "Astronaut" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921034824"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921036806"
+end
+if animclimb.Value == "Astronaut" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921032124"
+end
+---Vampire
+if animrun.Value == "Vampire" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921320299" 	
+end
+if animwalk.Value == "Vampire" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921326949"
+end
+if animfall.Value == "Vampire" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921321317"
+end
+if animjump.Value == "Vampire" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921322186"
+end
+if animidle.Value == "Vampire" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921315373"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921316709"
+end
+if animclimb.Value == "Vampire" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921314188"
+end
+---Werewolf
+if animrun.Value == "Werewolf" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921336997" 	
+end
+if animwalk.Value == "Werewolf" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921342074"
+end
+if animfall.Value == "Werewolf" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921337907"
+end
+if animjump.Value == "Werewolf" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+end
+if animidle.Value == "Werewolf" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921330408"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921333667"
+end
+if animclimb.Value == "Werewolf" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921329322"
+end
+---Rthro
+if animrun.Value == "Rthro" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921261968" 	
+end
+if animwalk.Value == "Rthro" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921269718"
+end
+if animfall.Value == "Rthro" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921262864"
+end
+if animjump.Value == "Rthro" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921263860"
+end
+if animidle.Value == "Rthro" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921258489"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921259953"
+end
+if animclimb.Value == "Rthro" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921257536"
+end
+---Oldschool
+if animrun.Value == "Oldschool" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=10921240218" 	
+end
+if animwalk.Value == "Oldschool" then
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=10921244891"
+end
+if animfall.Value == "Oldschool" then
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=10921241244"
+end
+if animjump.Value == "Oldschool" then
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=10921242013"
+end
+if animidle.Value == "Oldschool" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=10921230744"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=10921232093"
+end
+if animclimb.Value == "Oldschool" then
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=10921229866"
+end
+---Mr.Toilet
+if animrun.Value == "Toilet" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=4417979645" 	
+end
+if animidle.Value == "Toilet" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=4417977954"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=4417978624"
+end
+---Ud'Zal
+if animrun.Value == "Rthro Heavy Run" then
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=3236836670" 	
+end
+if animidle.Value == "Ud'zal" then
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=3303162274"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=3303162549"
+end
+if animwalk.Value == "Ud'zal" then
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=3303162967"
+	end
+end)
+	end
+	end
+    })
+	animrun = anim.CreateDropdown({
+		Name = "Run",
+		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool", "Toilet", "Rthro Heavy Run"},
+		Function = function() end
+	})
+
+	animwalk = anim.CreateDropdown({
+		Name = "Walk",
+		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool", "Ud'zal"},
+		Function = function() end
+	})
+
+	animfall = anim.CreateDropdown({
+		Name = "Fall",
+		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool"},
+		Function = function() end
+	})
+
+	animjump = anim.CreateDropdown({
+		Name = "Jump",
+		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool"},
+		Function = function() end
+	})
+
+	animidle = anim.CreateDropdown({
+		Name = "Idle",
+		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool", "Toilet", "Ud'zal"},
+		Function = function() end
+	})
+
+	animclimb = anim.CreateDropdown({
+		Name = "Climb",
+		List = {"Cartoony", "Levitation", "Robot", "Stylish", "Superhero", "Zombie", "Ninja", "Knight", "Mage", "Pirate", "Elder", "Toy", "Bubbly", "Astronaut", "Vampire", "Werewolf", "Rthro", "Oldschool"},
+		Function = function() end
+	})
+end)
+	HRPFUCKER = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+		Name = "HRPFucker",
+		Function = function(callback)
+		if callback then 
+		game.Players.LocalPlayer.Character.Humanoid:Remove()
+Instance.new('Humanoid', game.Players.LocalPlayer.Character)
+game:GetService("Workspace")[game.Players.LocalPlayer.Name]:FindFirstChildOfClass(
+'Humanoid').HipHeight = 2
+			else
+				warningNotification("SaladWare", "Reset To Disable", 5)
+			end
+		end
+	})
+
+	Logo = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+		Name = "Logo",
+		Function = function(callback)
+		if callback then 
+		local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local Frame_2 = Instance.new("Frame")
+local UIGradient_2 = Instance.new("UIGradient")
+local Frame_3 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local ScreenGui_2 = Instance.new("ScreenGui")
+
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.00823045336, 0, 0.0187031627, 0)
+Frame.Size = UDim2.new(0, 319, 0, 34)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.00186395645, 0, -0.194586992, 0)
+TextLabel.Size = UDim2.new(0, 173, 0, 47)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "SALADWARE"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(12, 255, 48)), ColorSequenceKeypoint.new(0.21, Color3.fromRGB(245, 255, 51)), ColorSequenceKeypoint.new(0.42, Color3.fromRGB(255, 131, 74)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(255, 19, 54)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(189, 23, 255)), ColorSequenceKeypoint.new(0.83, Color3.fromRGB(16, 8, 255)), ColorSequenceKeypoint.new(0.95, Color3.fromRGB(7, 251, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 255, 47))}
+UIGradient.Parent = TextLabel
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0, 0, -0.117647059, 0)
+Frame_2.Size = UDim2.new(0, 319, 0, 4)
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 204, 0)), ColorSequenceKeypoint.new(0.12, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.36, Color3.fromRGB(255, 6, 222)), ColorSequenceKeypoint.new(0.44, Color3.fromRGB(147, 14, 255)), ColorSequenceKeypoint.new(0.57, Color3.fromRGB(25, 17, 255)), ColorSequenceKeypoint.new(0.72, Color3.fromRGB(15, 255, 239)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(10, 255, 161)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(111, 255, 0))}
+UIGradient_2.Parent = Frame_2
+
+Frame_3.Parent = Frame
+Frame_3.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0.592476487, 0, 0.0882352963, 0)
+Frame_3.Size = UDim2.new(0, 4, 0, 31)
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0.665886223, 0, 0.146618754, 0)
+TextLabel_2.Size = UDim2.new(0, 97, 0, 25)
+TextLabel_2.Font = Enum.Font.SciFi
+TextLabel_2.Text = "FPS: N/A"
+TextLabel_2.TextColor3 = Color3.fromRGB(231, 137, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextStrokeTransparency = 0.000
+TextLabel_2.TextWrapped = true
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(78, 8, 255)), ColorSequenceKeypoint.new(0.11, Color3.fromRGB(214, 10, 255)), ColorSequenceKeypoint.new(0.23, Color3.fromRGB(48, 7, 255)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(182, 10, 255)), ColorSequenceKeypoint.new(0.67, Color3.fromRGB(143, 7, 255)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(17, 0, 255)), ColorSequenceKeypoint.new(0.98, Color3.fromRGB(238, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_3.Parent = TextLabel_2
+
+ScreenGui_2.Parent = ScreenGui
+ScreenGui_2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+
+local function GCJZ_fake_script()  
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local TextLabel = script.Parent
+	
+	local gradient = TextLabel.UIGradient
+	
+	local ts = game:GetService("TweenService")
+	
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	
+	local offset = {Offset = Vector2.new(1, 0)}
+	
+	local create = ts:Create(gradient, ti, offset)
+	
+	local startingPos = Vector2.new(-1, 0)
+	
+	local list = {} 
+	
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	
+	local counter = 0
+	
+	local status = "down" 
+	
+	gradient.Offset = startingPos
+	
+	local function rainbowColors()
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do 
+	
+			local hue = i * 17 
+	
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	
+		end
+	
+	end
+	
+	rainbowColors()
+	
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+	
+		kpt(0.5, list[#list - 1]),
+	
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list
+	
+	local function animate()
+	
+		create:Play()
+	
+		create.Completed:Wait() 
+	
+		gradient.Offset = startingPos 
+	
+		gradient.Rotation = 180
+	
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, list[1]) 
+	
+			})
+	
+			counter = 1
+	
+			status = "up" 
+	
+		elseif counter == #list and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[1]),
+	
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+	
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, list[counter + 2])
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "up"
+	
+		end
+	
+		create:Play()
+	
+		create.Completed:Wait()
+	
+		gradient.Offset = startingPos
+	
+		gradient.Rotation = 0 
+	
+		if counter == #list - 1 and status == "up" then
+	
+			gradient.Color = s({ 
+	
+	
+	
+				kpt(0, list[1]), 
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 1
+	
+			status = "down"
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]),
+	
+				kpt(0.5, list[1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 2
+	
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value) 	
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "down"
+	
+		end
+	
+		animate()
+	
+	end
+	
+	animate()
+end
+coroutine.wrap(GCJZ_fake_script)()
+local function LCHONZ_fake_script() -- Frame_2.LocalScript 
+	local script = Instance.new('LocalScript', Frame_2)
+
+	local Frame = script.Parent
+	
+	local gradient = Frame.UIGradient
+	
+	local ts = game:GetService("TweenService")
+	
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	
+	local offset = {Offset = Vector2.new(1, 0)}
+	
+	local create = ts:Create(gradient, ti, offset)
+	
+	local startingPos = Vector2.new(-1, 0)
+	
+	local list = {} 
+	
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	
+	local counter = 0
+	
+	local status = "down" 
+	
+	gradient.Offset = startingPos
+	
+	local function rainbowColors()
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do 
+	
+			local hue = i * 17 
+	
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	
+		end
+	
+	end
+	
+	rainbowColors()
+	
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+	
+		kpt(0.5, list[#list - 1]),
+	
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list
+	
+	local function animate()
+	
+		create:Play()
+	
+		create.Completed:Wait() 
+	
+		gradient.Offset = startingPos 
+	
+		gradient.Rotation = 180
+	
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, list[1]) 
+	
+			})
+	
+			counter = 1
+	
+			status = "up" 
+	
+		elseif counter == #list and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[1]),
+	
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+	
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, list[counter + 2])
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "up"
+	
+		end
+	
+		create:Play()
+	
+		create.Completed:Wait()
+	
+		gradient.Offset = startingPos
+	
+		gradient.Rotation = 0 
+	
+		if counter == #list - 1 and status == "up" then
+	
+			gradient.Color = s({ 
+	
+	
+	
+				kpt(0, list[1]), 
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 1
+	
+			status = "down"
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]),
+	
+				kpt(0.5, list[1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 2
+	
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value) 	
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "down"
+	
+		end
+	
+		animate()
+	
+	end
+	
+	animate()
+end
+coroutine.wrap(LCHONZ_fake_script)()
+local function CWMPI_fake_script() -- TextLabel_2.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	local textlable = script.Parent
+	
+	while wait() do
+		local fps = game.Workspace:GetRealPhysicsFPS()
+		textlable.Text = "FPS: "..math.floor(fps)
+	end
+end
+coroutine.wrap(CWMPI_fake_script)()
+local function TPAKJ_fake_script() -- TextLabel_2.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	local TextLabel = script.Parent
+	
+	local gradient = TextLabel.UIGradient
+	
+	local ts = game:GetService("TweenService")
+	
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	
+	local offset = {Offset = Vector2.new(1, 0)}
+	
+	local create = ts:Create(gradient, ti, offset)
+	
+	local startingPos = Vector2.new(-1, 0)
+	
+	local list = {} 
+	
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	
+	local counter = 0
+	
+	local status = "down" 
+	
+	gradient.Offset = startingPos
+	
+	local function rainbowColors()
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do 
+	
+			local hue = i * 17 
+	
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	
+		end
+	
+	end
+	
+	rainbowColors()
+	
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+	
+		kpt(0.5, list[#list - 1]),
+	
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list
+	
+	local function animate()
+	
+		create:Play()
+	
+		create.Completed:Wait() 
+	
+		gradient.Offset = startingPos 
+	
+		gradient.Rotation = 180
+	
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, list[1]) 
+	
+			})
+	
+			counter = 1
+	
+			status = "up" 
+	
+		elseif counter == #list and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[1]),
+	
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+	
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, list[counter + 2])
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "up"
+	
+		end
+	
+		create:Play()
+	
+		create.Completed:Wait()
+	
+		gradient.Offset = startingPos
+	
+		gradient.Rotation = 0 
+	
+		if counter == #list - 1 and status == "up" then
+	
+			gradient.Color = s({ 
+	
+	
+	
+				kpt(0, list[1]), 
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 1
+	
+			status = "down"
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]),
+	
+				kpt(0.5, list[1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 2
+	
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value) 	
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "down"
+	
+		end
+	
+		animate()
+	
+	end
+	
+	animate()
+end
+coroutine.wrap(TPAKJ_fake_script)()
+			else
+				ScreenGui:Destroy()
+				Frame:Destroy()
+			end
+		end
+	})
+
+	runFunction(function()
+		local Enabled = false
+		local FPSUnlocker = {Enabled = false}
+		FPSUnlocker = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+			Name = "FPSUnlocker",
+			Function = function(callback)
+				Enabled = callback
+				if Enabled then 
+					task.spawn(function()
+						repeat
+							task.wait()
+							setfpscap(FPSAmount.Value)
+						until (not Enabled)
+					end)
+				else
+					setfpscap(60)
+				end
+			end
+		})
+		FPSAmount = FPSUnlocker.CreateSlider({
+			Name = "FPS",
+			Min = 60,
+			Max = 360, 
+			Function = function(val) end,
+			Default = 360
+		})
+	end)
+
+	TexturePack = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
+		Name = "My First Texture Pack (Shit)",
+		Function = function(callback)
+			if callback then 
+				warningNotification("SaladWare", "Loading in 5 seconds, also you cant turn it off lol", 5)
+				
+			--mastadanws method, i just replaced the assets
+            local Settings = {
+                Resize = true, 
+                ResizeNum = 0.7, 
+                Color = Color3.fromRGB(102, 51, 153), 
+                LoadTime = 1 
+            }
+
+            repeat task.wait() until game:IsLoaded()
+            local bwgames = {6872274481,8444591321,8560631822}
+            if not table.find(bwgames,game.PlaceId) then return end
+            task.wait(Settings.LoadTime)
+            local cam = game:GetService("Workspace").Camera
+            cam:WaitForChild("Viewmodel")
+            cam.Viewmodel.ChildAdded:Connect(function(model)
+                if model:FindFirstChild("Handle") then
+                    local handle = model:FindFirstChild("Handle")
+                    local name = string.lower(model.Name)
+                    handle.Material = Enum.Material.Glass
+                    handle.TextureID = "rbxassetid://13304849913"
+                    handle.Color = Settings.Color
+                    if name:find("sword") then
+                        handle.MeshId = "rbxassetid://13293006561"
+                    elseif name:find("pickaxe") then
+                        handle.MeshId = "rbxassetid://13303184641"
+                    if Settings.Resize == true then
+                        handle.Size = handle.Size / Settings.ResizeNum
+                    end
+                    end
+                end
+            end)
+			end
+		end
+})
+
 
 runFunction(function()
 	local NoFall = {Enabled = false}
