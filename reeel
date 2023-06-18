@@ -5855,7 +5855,6 @@ game:GetService("Workspace")[game.Players.LocalPlayer.Name]:FindFirstChildOfClas
 		Function = function(callback)
 		if callback then 
 		local ScreenGui = Instance.new("ScreenGui")
-		game:GetService(“StarterGui”).ResetPlayerGuiOnSpawn = false
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
 local UIGradient = Instance.new("UIGradient")
