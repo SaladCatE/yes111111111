@@ -4392,6 +4392,648 @@ for i, plr in pairs(Players) do
 	end
 })
 
+	Logo = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		Name = "Logo",
+		Function = function(callback)
+		if callback then 
+		local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local Frame_2 = Instance.new("Frame")
+local UIGradient_2 = Instance.new("UIGradient")
+local Frame_3 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local ScreenGui_2 = Instance.new("ScreenGui")
+
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.00823045336, 0, 0.0187031627, 0)
+Frame.Size = UDim2.new(0, 319, 0, 34)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.00186395645, 0, -0.194586992, 0)
+TextLabel.Size = UDim2.new(0, 173, 0, 47)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "SALADWARE"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(12, 255, 48)), ColorSequenceKeypoint.new(0.21, Color3.fromRGB(245, 255, 51)), ColorSequenceKeypoint.new(0.42, Color3.fromRGB(255, 131, 74)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(255, 19, 54)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(189, 23, 255)), ColorSequenceKeypoint.new(0.83, Color3.fromRGB(16, 8, 255)), ColorSequenceKeypoint.new(0.95, Color3.fromRGB(7, 251, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(19, 255, 47))}
+UIGradient.Parent = TextLabel
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0, 0, -0.117647059, 0)
+Frame_2.Size = UDim2.new(0, 319, 0, 4)
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 204, 0)), ColorSequenceKeypoint.new(0.12, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.36, Color3.fromRGB(255, 6, 222)), ColorSequenceKeypoint.new(0.44, Color3.fromRGB(147, 14, 255)), ColorSequenceKeypoint.new(0.57, Color3.fromRGB(25, 17, 255)), ColorSequenceKeypoint.new(0.72, Color3.fromRGB(15, 255, 239)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(10, 255, 161)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(111, 255, 0))}
+UIGradient_2.Parent = Frame_2
+
+Frame_3.Parent = Frame
+Frame_3.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0.592476487, 0, 0.0882352963, 0)
+Frame_3.Size = UDim2.new(0, 4, 0, 31)
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0.665886223, 0, 0.146618754, 0)
+TextLabel_2.Size = UDim2.new(0, 97, 0, 25)
+TextLabel_2.Font = Enum.Font.SciFi
+TextLabel_2.Text = "FPS: N/A"
+TextLabel_2.TextColor3 = Color3.fromRGB(231, 137, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextStrokeTransparency = 0.000
+TextLabel_2.TextWrapped = true
+
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(78, 8, 255)), ColorSequenceKeypoint.new(0.11, Color3.fromRGB(214, 10, 255)), ColorSequenceKeypoint.new(0.23, Color3.fromRGB(48, 7, 255)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(182, 10, 255)), ColorSequenceKeypoint.new(0.67, Color3.fromRGB(143, 7, 255)), ColorSequenceKeypoint.new(0.85, Color3.fromRGB(17, 0, 255)), ColorSequenceKeypoint.new(0.98, Color3.fromRGB(238, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_3.Parent = TextLabel_2
+
+ScreenGui_2.Parent = ScreenGui
+ScreenGui_2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+
+local function GCJZ_fake_script()  
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local TextLabel = script.Parent
+	
+	local gradient = TextLabel.UIGradient
+	
+	local ts = game:GetService("TweenService")
+	
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	
+	local offset = {Offset = Vector2.new(1, 0)}
+	
+	local create = ts:Create(gradient, ti, offset)
+	
+	local startingPos = Vector2.new(-1, 0)
+	
+	local list = {} 
+	
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	
+	local counter = 0
+	
+	local status = "down" 
+	
+	gradient.Offset = startingPos
+	
+	local function rainbowColors()
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do 
+	
+			local hue = i * 17 
+	
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	
+		end
+	
+	end
+	
+	rainbowColors()
+	
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+	
+		kpt(0.5, list[#list - 1]),
+	
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list
+	
+	local function animate()
+	
+		create:Play()
+	
+		create.Completed:Wait() 
+	
+		gradient.Offset = startingPos 
+	
+		gradient.Rotation = 180
+	
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, list[1]) 
+	
+			})
+	
+			counter = 1
+	
+			status = "up" 
+	
+		elseif counter == #list and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[1]),
+	
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+	
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, list[counter + 2])
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "up"
+	
+		end
+	
+		create:Play()
+	
+		create.Completed:Wait()
+	
+		gradient.Offset = startingPos
+	
+		gradient.Rotation = 0 
+	
+		if counter == #list - 1 and status == "up" then
+	
+			gradient.Color = s({ 
+	
+	
+	
+				kpt(0, list[1]), 
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 1
+	
+			status = "down"
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]),
+	
+				kpt(0.5, list[1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 2
+	
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value) 	
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "down"
+	
+		end
+	
+		animate()
+	
+	end
+	
+	animate()
+end
+coroutine.wrap(GCJZ_fake_script)()
+local function LCHONZ_fake_script() -- Frame_2.LocalScript 
+	local script = Instance.new('LocalScript', Frame_2)
+
+	local Frame = script.Parent
+	
+	local gradient = Frame.UIGradient
+	
+	local ts = game:GetService("TweenService")
+	
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	
+	local offset = {Offset = Vector2.new(1, 0)}
+	
+	local create = ts:Create(gradient, ti, offset)
+	
+	local startingPos = Vector2.new(-1, 0)
+	
+	local list = {} 
+	
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	
+	local counter = 0
+	
+	local status = "down" 
+	
+	gradient.Offset = startingPos
+	
+	local function rainbowColors()
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do 
+	
+			local hue = i * 17 
+	
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	
+		end
+	
+	end
+	
+	rainbowColors()
+	
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+	
+		kpt(0.5, list[#list - 1]),
+	
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list
+	
+	local function animate()
+	
+		create:Play()
+	
+		create.Completed:Wait() 
+	
+		gradient.Offset = startingPos 
+	
+		gradient.Rotation = 180
+	
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, list[1]) 
+	
+			})
+	
+			counter = 1
+	
+			status = "up" 
+	
+		elseif counter == #list and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[1]),
+	
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+	
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, list[counter + 2])
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "up"
+	
+		end
+	
+		create:Play()
+	
+		create.Completed:Wait()
+	
+		gradient.Offset = startingPos
+	
+		gradient.Rotation = 0 
+	
+		if counter == #list - 1 and status == "up" then
+	
+			gradient.Color = s({ 
+	
+	
+	
+				kpt(0, list[1]), 
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 1
+	
+			status = "down"
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]),
+	
+				kpt(0.5, list[1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 2
+	
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value) 	
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "down"
+	
+		end
+	
+		animate()
+	
+	end
+	
+	animate()
+end
+coroutine.wrap(LCHONZ_fake_script)()
+local function CWMPI_fake_script() -- TextLabel_2.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	local textlable = script.Parent
+	
+	while wait() do
+		local fps = game.Workspace:GetRealPhysicsFPS()
+		textlable.Text = "FPS: "..math.floor(fps)
+	end
+end
+coroutine.wrap(CWMPI_fake_script)()
+local function TPAKJ_fake_script() -- TextLabel_2.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	local TextLabel = script.Parent
+	
+	local gradient = TextLabel.UIGradient
+	
+	local ts = game:GetService("TweenService")
+	
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	
+	local offset = {Offset = Vector2.new(1, 0)}
+	
+	local create = ts:Create(gradient, ti, offset)
+	
+	local startingPos = Vector2.new(-1, 0)
+	
+	local list = {} 
+	
+	local s, kpt = ColorSequence.new, ColorSequenceKeypoint.new
+	
+	local counter = 0
+	
+	local status = "down" 
+	
+	gradient.Offset = startingPos
+	
+	local function rainbowColors()
+	
+		local sat, val = 255, 255 
+	
+		for i = 1, 15 do 
+	
+			local hue = i * 17 
+	
+			table.insert(list, Color3.fromHSV(hue / 255, sat / 255, val / 255))
+	
+		end
+	
+	end
+	
+	rainbowColors()
+	
+	gradient.Color = s({
+	
+		kpt(0, list[#list]),
+	
+		kpt(0.5, list[#list - 1]),
+	
+		kpt(1, list[#list - 2])
+	
+	})
+	
+	counter = #list
+	
+	local function animate()
+	
+		create:Play()
+	
+		create.Completed:Wait() 
+	
+		gradient.Offset = startingPos 
+	
+		gradient.Rotation = 180
+	
+		if counter == #list - 1 and status == "down" then
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, list[1]) 
+	
+			})
+	
+			counter = 1
+	
+			status = "up" 
+	
+		elseif counter == #list and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[1]),
+	
+				kpt(1, list[2])
+	
+			})
+	
+			counter = 2
+	
+			status = "up"
+	
+		elseif counter <= #list - 2 and status == "down" then 
+	
+			gradient.Color = s({
+	
+				kpt(0, gradient.Color.Keypoints[1].Value),
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, list[counter + 2])
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "up"
+	
+		end
+	
+		create:Play()
+	
+		create.Completed:Wait()
+	
+		gradient.Offset = startingPos
+	
+		gradient.Rotation = 0 
+	
+		if counter == #list - 1 and status == "up" then
+	
+			gradient.Color = s({ 
+	
+	
+	
+				kpt(0, list[1]), 
+	
+				kpt(0.5, list[#list]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 1
+	
+			status = "down"
+	
+		elseif counter == #list and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[2]),
+	
+				kpt(0.5, list[1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value)
+	
+			})
+	
+			counter = 2
+	
+			status = "down"
+	
+		elseif counter <= #list - 2 and status == "up" then
+	
+			gradient.Color = s({
+	
+				kpt(0, list[counter + 2]), 
+	
+				kpt(0.5, list[counter + 1]), 
+	
+				kpt(1, gradient.Color.Keypoints[3].Value) 	
+	
+			})
+	
+			counter = counter + 2
+	
+			status = "down"
+	
+		end
+	
+		animate()
+	
+	end
+	
+	animate()
+end
+coroutine.wrap(TPAKJ_fake_script)()
+			else
+				ScreenGui:Destroy()
+				Frame:Destroy()
+			end
+		end
+	})
+
 runFunction(function()
 	local deb
 	local con
