@@ -4769,75 +4769,80 @@ coroutine.wrap(YZQZY_fake_script)()
 })
 end)
 
-	runFunction(function()
-		local TeleportBed
-		local con
-		local client = require(game:GetService("ReplicatedStorage"):WaitForChild("TS"):WaitForChild("remotes")).default.Client
-		local lplr = game:GetService("Players").LocalPlayer
-	
-		function fetchBed()
-			local selectedBed
-			for _, bed in next, workspace:GetChildren() do
-				if bed.Name == "bed" and not selectedBed then
-					local covers = bed:WaitForChild("Covers")
-					if lplr.TeamColor ~= covers.BrickColor then
-						selectedBed = bed
-					end
+runFunction(function()
+	local TeleportBed
+	local con
+	local client = require(game:GetService("ReplicatedStorage"):WaitForChild("TS"):WaitForChild("remotes")).default.Client
+	local lplr = game:GetService("Players").LocalPlayer
+
+	function fetchBed()
+		local selectedBed
+		for _, bed in next, workspace:GetChildren() do
+			if bed.Name == "bed" and not selectedBed then
+				local covers = bed:WaitForChild("Covers")
+				if lplr.TeamColor ~= covers.BrickColor then
+					selectedBed = bed
 				end
 			end
-			return selectedBed
 		end
-	
-		function teleportToBed()
-			local bed = fetchBed()
-			local teleportPosition = bed.Position + Vector3.new(0, 10, 0)
-			local character = lplr.Character
-			local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
-			if humanoid then
-				for _ = 1, 10 do
-					humanoid.Health = 0
-					humanoid:ChangeState(Enum.HumanoidStateType.Dead)
-				end
-	
-				local characterAddedConnection
-				characterAddedConnection = lplr.CharacterAdded:Connect(function(newCharacter)
-					humanoid = newCharacter:WaitForChild("Humanoid")
-					local root = newCharacter:WaitForChild("HumanoidRootPart")
-					local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
-					con = game:GetService("RunService").Heartbeat:Connect(function(dt)
-						local dist = ((check and 700 or 1200) * dt)
-						if (teleportPosition - root.Position).Magnitude > dist then
-							root.CFrame = root.CFrame + (teleportPosition - root.Position).Unit * dist
-							root.Velocity = (teleportPosition - root.Position).Unit * 20
-						else
-							root.CFrame = CFrame.new(teleportPosition)
-						end
-					end)
-					repeat
-						task.wait()
-					until (teleportPosition - root.Position).Magnitude < 10
-					con:Disconnect()
-					characterAddedConnection:Disconnect()
+		return selectedBed
+	end
+
+	function teleportToBed()
+		local bed = fetchBed()
+		local teleportPosition = bed.Position + Vector3.new(0, 10, 0)
+		local character = lplr.Character
+		local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
+		if humanoid then
+			for _ = 1, 10 do
+				humanoid.Health = 0
+				humanoid:ChangeState(Enum.HumanoidStateType.Dead)
+			end
+
+			local characterAddedConnection
+			characterAddedConnection = lplr.CharacterAdded:Connect(function(newCharacter)
+				humanoid = newCharacter:WaitForChild("Humanoid")
+				local root = newCharacter:WaitForChild("HumanoidRootPart")
+				local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
+
+				task.wait(1)
+
+				con = game:GetService("RunService").Heartbeat:Connect(function(dt)
+					local dist = ((check and 700 or 1200) * dt)
+					if (teleportPosition - root.Position).Magnitude > dist then
+						root.CFrame = root.CFrame + (teleportPosition - root.Position).Unit * dist
+						root.Velocity = (teleportPosition - root.Position).Unit * 20
+					else
+						root.CFrame = CFrame.new(teleportPosition)
+					end
 				end)
+
+				repeat
+					task.wait()
+				until (teleportPosition - root.Position).Magnitude < 10
+
+				con:Disconnect()
+				characterAddedConnection:Disconnect()
+			end)
+		end
+	end
+
+	TeleportBed = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
+		Name = "BedTeleport",
+		HoverText = "Randomly teleports you to a bed",
+		Function = function(callback)
+			if callback then
+				lplr = game:GetService("Players").LocalPlayer
+				chr = lplr.Character
+				if lplr and chr then
+					teleportToBed()
+				end
+				TeleportBed.ToggleButton(false)
 			end
 		end
-	
-		TeleportBed = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
-			Name = "BedTeleport",
-			HoverText = "Randomly teleports you to a bed ",
-			Function = function(callback)
-				if callback then
-					lplr = game:GetService("Players").LocalPlayer
-					chr = lplr.Character
-					if lplr and chr then
-						task.wait(4)
-						teleportToBed()
-					end
-					TeleportBed.ToggleButton(false)
-				end
-			end
-		})
-	end)
+	})
+end)
+
 	
 	
 
