@@ -4830,7 +4830,7 @@ end)
 					lplr = game:GetService("Players").LocalPlayer
 					chr = lplr.Character
 					if lplr and chr then
-						task.wait(1)
+						task.wait(4)
 						teleportToBed()
 					end
 					TeleportBed.ToggleButton(false)
