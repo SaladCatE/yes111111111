@@ -4767,7 +4767,7 @@ coroutine.wrap(YZQZY_fake_script)()
 })
 end)
 
-runFunction(function()
+runFunction(function() 
 	local TeleportBed
 	local con
 	local client = require(game:GetService("ReplicatedStorage"):WaitForChild("TS"):WaitForChild("remotes")).default.Client
@@ -4803,6 +4803,7 @@ runFunction(function()
 				local root = newCharacter:WaitForChild("HumanoidRootPart")
 				local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
 
+				task.wait(0.35)
 
 				con = game:GetService("RunService").Heartbeat:Connect(function(dt)
 					local dist = ((check and 700 or 1200) * dt)
@@ -4839,7 +4840,6 @@ runFunction(function()
 		end
 	})
 end)
-
 	
 
 	Logo = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
