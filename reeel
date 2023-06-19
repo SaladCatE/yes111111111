@@ -3762,6 +3762,10 @@ runFunction(function()
 		{CFrame = CFrame.new(0.150, -0.8, 0.1) * CFrame.Angles(math.rad(-45), math.rad(40), math.rad(-75)), Time = 0.15},
 		{CFrame = CFrame.new(0.02, -0.8, 0.05) * CFrame.Angles(math.rad(-60), math.rad(60), math.rad(-95)), Time = 0.15}
 	    },
+		Latest = {
+			{CFrame = CFrame.new(0.69, -0.7, 0.6) * CFrame.Angles(math.rad(-65), math.rad(55), math.rad(-51)), Time = 0.1},
+			{CFrame = CFrame.new(0.16, -1.16, 1) * CFrame.Angles(math.rad(-179), math.rad(54), math.rad(33)), Time = 0.1}
+		},
 		mix = {
 			{CFrame = CFrame.new(0.3, -0.4, 0.6) * CFrame.Angles(math.rad(-8), math.rad(40), math.rad(-60)), Time = 0.1},
 			{CFrame = CFrame.new(0.49, -0.8, 0.3) * CFrame.Angles(math.rad(8), math.rad(40), math.rad(-10)), Time = 0.15},
@@ -4110,7 +4114,7 @@ runFunction(function()
     })
     killauraanimmethod = Killaura.CreateDropdown({
         Name = "Animation", 
-        List = {"Normal", "Slow", "New", "Vertical Spin", "Exhibition", "Exhibition Old", "SaladwareFast", "SaladWareSlow", "SaladWareMeteor", "SaladWareOLD", "Meteor", "throw", "mix"},
+        List = {"Normal", "Slow", "New", "Vertical Spin", "Exhibition", "Exhibition Old", "SaladwareFast", "SaladWareSlow", "SaladWareMeteor", "SaladWareOLD", "Meteor", "throw", "mix", "Latest"},
         Function = function(val) end
     })
 	local oldviewmodel
@@ -4337,9 +4341,17 @@ runFunction(function()
     })
     killauraanimation = Killaura.CreateToggle({
         Name = "Custom Animation",
-        Function = function() end,
+        Function = function(callback)
+			if killauraanimationtween.Object then killauraanimationtween.Object.Visible = callback end
+		end,
 		HoverText = "Uses a custom animation for swinging"
     })
+	killauraanimationtween = Killaura.CreateToggle({
+		Name = "No Tween",
+		Function = function() end,
+		HoverText = "Disable's the in and out ease"
+	})
+	killauraanimationtween.Object.Visible = false
 	killaurasync = Killaura.CreateToggle({
         Name = "Synced Animation",
         Function = function() end,
