@@ -4830,6 +4830,7 @@ end)
 					lplr = game:GetService("Players").LocalPlayer
 					chr = lplr.Character
 					if lplr and chr then
+						task.wait(1)
 						teleportToBed()
 					end
 					TeleportBed.ToggleButton(false)
@@ -4837,6 +4838,7 @@ end)
 			end
 		})
 	end)
+	
 	
 
 	Logo = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
