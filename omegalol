@@ -4769,65 +4769,75 @@ coroutine.wrap(YZQZY_fake_script)()
 })
 end)
 
-runFunction(function()
-	local deb
-	local con
-	local client = require(game:GetService("ReplicatedStorage"):WaitForChild("TS"):WaitForChild("remotes")).default.Client
-	local lplr = game:GetService("Players").LocalPlayer
-	function fetchBed()
-		local selectedBed
-		for _, bed in next, workspace:GetChildren() do
-			if bed.Name == "bed" and not selectedBed then
-				local covers = bed:WaitForChild("Covers")
-				
-				if lplr.TeamColor ~= covers.BrickColor then
-					selectedBed = bed
-				end
-			end
-		end
-		return (selectedBed)
-	end
-	deb = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
-		Name = "BedTP",
-		HoverText = "Teleports you to a random bed by killing you",
-		Function = function(callback)
-			if callback then
-				lplr = game:GetService("Players").LocalPlayer
-				chr = lplr.Character
-				if lplr and chr then
-					local bed = fetchBed()
-					local tppos2 = bed.Position + Vector3.new(0, 10, 0)
-					local hum = chr:FindFirstChildWhichIsA("Humanoid")
-					con = lplr.CharacterAdded:Connect(function(chr)
-						con:Disconnect()
-						task.wait(.5)
-						local root = chr:WaitForChild("HumanoidRootPart")
-						local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
-						con = game:GetService("RunService").Heartbeat:Connect(function(dt)
-							local dist = ((check and 700 or 1200) * dt)
-							if (tppos2 - root.CFrame.p).Magnitude > dist then
-								root.CFrame = root.CFrame + (tppos2 - root.CFrame.p).Unit * dist
-								local yes = (tppos2 - root.CFrame.p).Unit * 20
-								root.Velocity = Vector3.new(yes.X, root.Velocity.Y, yes.Z)
-							else
-								root.CFrame = root.CFrame + (tppos2 - root.CFrame.p)
-							end
-						end)
-						repeat
-							task.wait()
-						until (tppos2 - root.CFrame.p).Magnitude < 10
-						con:Disconnect()
-					end)
-					for _ = 1, 10, 1 do
-						hum:ChangeState(Enum.HumanoidStateType.Dead)
-						hum.Health = 0
+	runFunction(function()
+		local TeleportBed
+		local con
+		local client = require(game:GetService("ReplicatedStorage"):WaitForChild("TS"):WaitForChild("remotes")).default.Client
+		local lplr = game:GetService("Players").LocalPlayer
+	
+		function fetchBed()
+			local selectedBed
+			for _, bed in next, workspace:GetChildren() do
+				if bed.Name == "bed" and not selectedBed then
+					local covers = bed:WaitForChild("Covers")
+					if lplr.TeamColor ~= covers.BrickColor then
+						selectedBed = bed
 					end
 				end
-				deb.ToggleButton(false)
+			end
+			return selectedBed
+		end
+	
+		function teleportToBed()
+			local bed = fetchBed()
+			local teleportPosition = bed.Position + Vector3.new(0, 10, 0)
+			local character = lplr.Character
+			local humanoid = character and character:FindFirstChildWhichIsA("Humanoid")
+			if humanoid then
+				for _ = 1, 10 do
+					humanoid.Health = 0
+					humanoid:ChangeState(Enum.HumanoidStateType.Dead)
+				end
+	
+				local characterAddedConnection
+				characterAddedConnection = lplr.CharacterAdded:Connect(function(newCharacter)
+					humanoid = newCharacter:WaitForChild("Humanoid")
+					local root = newCharacter:WaitForChild("HumanoidRootPart")
+					local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
+					con = game:GetService("RunService").Heartbeat:Connect(function(dt)
+						local dist = ((check and 700 or 1200) * dt)
+						if (teleportPosition - root.Position).Magnitude > dist then
+							root.CFrame = root.CFrame + (teleportPosition - root.Position).Unit * dist
+							root.Velocity = (teleportPosition - root.Position).Unit * 20
+						else
+							root.CFrame = CFrame.new(teleportPosition)
+						end
+					end)
+					repeat
+						task.wait()
+					until (teleportPosition - root.Position).Magnitude < 10
+					con:Disconnect()
+					characterAddedConnection:Disconnect()
+				end)
 			end
 		end
-	})
-end)
+	
+		TeleportBed = GuiLibrary.ObjectsThatCanBeSaved.BlatantWindow.Api.CreateOptionsButton({
+			Name = "BedTeleport",
+			HoverText = "Randomly teleports you to a bed ",
+			Function = function(callback)
+				if callback then
+					lplr = game:GetService("Players").LocalPlayer
+					chr = lplr.Character
+					if lplr and chr then
+						teleportToBed()
+					end
+					TeleportBed.ToggleButton(false)
+				end
+			end
+		})
+	end)
+	
 
 	Logo = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
 		Name = "Logo",
@@ -5567,34 +5577,6 @@ runFunction(function()
 	})
 end)
 
-runFunction(function()
-	local Enabled = false
-	local FPSUnlocker = {Enabled = false}
-	FPSUnlocker = GuiLibrary.ObjectsThatCanBeSaved.UtilityWindow.Api.CreateOptionsButton({
-		Name = "FPSUnlocker",
-		Function = function(callback)
-			Enabled = callback
-			if Enabled then 
-				task.spawn(function()
-					repeat
-						task.wait()
-						setfpscap(FPSAmount.Value)
-					until (not Enabled)
-				end)
-			else
-				setfpscap(60)
-			end
-		end
-	})
-	FPSAmount = FPSUnlocker.CreateSlider({
-		Name = "FPS",
-		Min = 60,
-		Max = 360, 
-		Function = function(val) end,
-		Default = 360
-	})
-end)
-
 
 local GuiLibrary = shared.GuiLibrary
 local plrs = game.Players:GetPlayers()
@@ -5603,116 +5585,136 @@ local detected = {}
 local lplr = game.Players.LocalPlayer
 local setcallback = {}
 local hpsset = {}
-local InfiniteFlyDetector = {["Enabled"] = false,}
-function char(v)
-	repeat task.wait() until v.Character
-	v.Character:WaitForChild("Humanoid").Changed:Connect(function ()
-		if v.Character:WaitForChild("Humanoid").Health ~= 100 then
-			if not hpsset[v.Name] then
-				hpsset[v.Name] = v.Character.Humanoid.Health
-			end
-			if hps_detected[v.Name] then
-				if not setcallback[v.Name] then setcallback[v.Name] = {} end
-				if hpsset[v.Name] >= v.Character.Humanoid.Health then
-					setcallback[v.Name][#setcallback[v.Name] + 1] = true;
-					hpsset[v.Name] = v.Character.Humanoid.Health
-				end
-				return
-			end
-			hps_detected[v.Name] = true;
-			task.wait(0.25)
-			local number = # (setcallback[v.Name] or {})
-			repeat task.wait()
-				for i,z in pairs(setcallback[v.Name] or {}) do
-					task.wait(0.25)
-					table.remove(setcallback[v.Name],i)
-				end
-			until # (setcallback[v.Name] or {}) == 0
-			task.wait(0.1)
-			hps_detected[v.Name] = false;
-		end
-	end)
-	local old
-	local my;
-	my = v.Character.Humanoid.Died:Connect(function()
-		repeat task.wait()
-			old = nil
-			task.wait()
-		until old == nil
-		my:Disconnect()
-	end)
-	local check;
-	local telepearlon = false
-	v:GetAttributeChangedSignal("LastTeleported"):Connect(function()
-		if (workspace:GetServerTimeNow() - lplr:GetAttribute("LastTeleported")) < 3 then
-			telepearlon = true
-			task.wait(2)
-			telepearlon = false;
-		end
-	end)
-	while task.wait(0.1) do
-		repeat task.wait() until v.Character
-		local root = v.Character:WaitForChild("HumanoidRootPart")
-		if old then
-			local pos = root.Position
-			local x,y,z = (pos.X < 0 and -pos.X or pos.X),(pos.Y < 0 and -pos.Y or pos.Y),(pos.Z < 0 and -pos.Z or pos.Z)
-			local ox,oy,oz = (old.X < 0 and -old.X or old.X),(old.Y < 0 and -old.Y or old.Y),(old.Z < 0 and -old.Z or old.Z)
-			local exploiter
-			if ox + (v.Character.Humanoid.WalkSpeed * 0.8) < x then
-				exploiter = true
-			elseif oz + (v.Character.Humanoid.WalkSpeed * 0.8) < z then
-				exploiter = true
-			end
-			if exploiter and not detected[v.Name] and v ~= game.Players.LocalPlayer
-				and bedwarsStore.matchState ~= 0 and not bedwarsStore.secs and not telepearlon
-				and not hps_detected[v.Name]  then
-				detected[v.Name] = true;
-				task.wait(0.1)
-				if telepearlon or not (game.Players.LocalPlayer.Character and game.Players.LocalPlayer:FindFirstChild("HumanoidRootPart")) then
-				else
-					warningNotification("SaladWare Booster","Exploiter Detected on"..v.Name,60)
-					shared.clients.ClientUsers[v.Name] = "EXPLOITER"
-					break
-				end
-			end
-			if InfiniteFlyDetector.Enabled and y > 2000 then
-				warningNotification("SaladWare Booster","Infinite Fly detected on"..v.Name..".",5)
-				shared.clients.ClientUsers[v.Name] = "EXPLOITER"
-				break 
-			end 
-			if v == game.Players.LocalPlayer then break end
-		end
-		old = root.Position
-	end
-end
-local Detection;Detection = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
-	Name = "Exploiter Detector V1",
-	Function = function (enabled)
-		if enabled then
-			task.spawn(function()
-				for i,v in pairs(plrs) do
-					task.spawn(function ()
-						char(v)
-					end)
-					task.spawn(function ()
-						v.CharacterAdded:Connect(function ()
-							task.wait(5)
-							char(v)
-						end)
-					end)
-				end
-				game.Players.PlayerAdded:Connect(function(v)
-					task.wait(5)
-					char(v)
+local InfiniteFlyDetector = {["Enabled"] = false}
+local WalkSpeedDetector = {["Enabled"] = false}
+local WalkSpeedThreshold = 23 
+local NoNameTagDetector = {["Enabled"] = false}
+local NoFallDetector = {["Enabled"] = false}
+local TPRedirectionDetector = {["Enabled"] = false}
+
+local function char(v)
+    repeat task.wait() until v.Character
+    v.Character:WaitForChild("Humanoid").Changed:Connect(function()
+    end)
+
+    local old
+    local my
+    my = v.Character.Humanoid.Died:Connect(function()
+    end)
+
+    local check
+    local telepearlon = false
+    v:GetAttributeChangedSignal("LastTeleported"):Connect(function()
+        if (workspace:GetServerTimeNow() - lplr:GetAttribute("LastTeleported")) < 3 then
+            telepearlon = true
+            task.wait(2)
+            telepearlon = false
+        end
+    end)
+
+    while task.wait(0.1) do
+        repeat task.wait() until v.Character
+        local root = v.Character:WaitForChild("HumanoidRootPart")
+        if old then
+            local pos = root.Position
+            local x, y, z = math.abs(pos.X), math.abs(pos.Y), math.abs(pos.Z)
+            local ox, oy, oz = math.abs(old.X), math.abs(old.Y), math.abs(old.Z)
+            local exploiter
+            if ox + (v.Character:WaitForChild("Humanoid").WalkSpeed * 0.8) < x or oz + (v.Character:WaitForChild("Humanoid").WalkSpeed * 0.8) < z then
+                exploiter = true
+            end
+            if exploiter and not detected[v.Name] and v ~= game.Players.LocalPlayer
+                and bedwarsStore.matchState ~= 0 and not bedwarsStore.secs and not telepearlon
+                and not hps_detected[v.Name] then
+                detected[v.Name] = true
+                task.wait(0.1)
+                if telepearlon or not (game.Players.LocalPlayer.Character and game.Players.LocalPlayer:FindFirstChild("HumanoidRootPart")) then
+                else
+                    warningNotification("SaladWare Private", "Exploiter Detected on " .. v.Name, 60)
+                    shared.clients.ClientUsers[v.Name] = "EXPLOITER"
+                    break
+                end
+            end
+            if InfiniteFlyDetector.Enabled and y > 2000 then
+                warningNotification("SaladWare Private", "Infinite Fly detected on " .. v.Name .. ".", 5)
+                shared.clients.ClientUsers[v.Name] = "EXPLOITER"
+                break
+            end
+            if WalkSpeedDetector.Enabled and v.Character:WaitForChild("Humanoid").WalkSpeed > WalkSpeedThreshold then
+                warningNotification("SaladWare Private", "WalkSpeed detected on " .. v.Name .. ".", 5)
+                shared.clients.ClientUsers[v.Name] = "EXPLOITER"
+                break
+            end
+            if NoNameTagDetector.Enabled and (not v.Character:FindFirstChild("Head") or not v.Character.Head:FindFirstChild("Nametag")) then
+                warningNotification("SaladWare Private", "NoNameTag detected on " .. v.Name .. ".", 5)
+                shared.clients.ClientUsers[v.Name] = "EXPLOITER"
+                break
+            end
+			if TPRedirectionDetector.Enabled then
+				local teleportEvent = v.Character.Humanoid.Touched:Connect(function(part)
+					if part:IsA("BasePart") and part.Name == "HumanoidRootPart" then
+						local root = v.Character:FindFirstChild("HumanoidRootPart")
+						local position = root.Position
+						
+						if (position - old).Magnitude > 10 then
+							warningNotification("SaladWare Private", "Teleport detected on " .. v.Name .. ".", 5)
+							shared.clients.ClientUsers[v.Name] = "EXPLOITER"
+							teleportEvent:Disconnect() 
+						end
+					end
 				end)
-			end)
-		end
-	end,
+			end
+			
+            if v == game.Players.LocalPlayer then
+                break
+            end
+        end
+        old = root.Position
+    end
+end
+
+local Detection
+Detection = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
+    Name = "Exploiter Detector V1",
+    Function = function(enabled)
+        if enabled then
+            for i, v in pairs(plrs) do
+                task.spawn(function()
+                    char(v)
+                end)
+                task.spawn(function()
+                    v.CharacterAdded:Connect(function()
+                        task.wait(5)
+                        char(v)
+                    end)
+                end)
+            end
+            game.Players.PlayerAdded:Connect(function(v)
+                task.wait(5)
+                char(v)
+            end)
+        end
+    end,
 })
+
 InfiniteFlyDetector = Detection.CreateToggle({
-	Name = "InfiniteFly Detector.",
-	Function = function() end,
+    Name = "InfiniteFly Detector",
+    Function = function()
+    end,
 })
+
+WalkSpeedDetector = Detection.CreateToggle({
+    Name = "WalkSpeed Detector",
+    Function = function()
+    end,
+})
+
+NoNameTagDetector = Detection.CreateToggle({
+    Name = "NoNameTag Detector",
+    Function = function()
+    end,
+})
+
 
 
 runFunction(function()
@@ -6849,7 +6851,7 @@ coroutine.wrap(TPAKJ_fake_script)()
 		Name = "My First Texture Pack (Shit)",
 		Function = function(callback)
 			if callback then 
-				warningNotification("SaladWare", "Loading in 5 seconds, also you cant turn it off lol", 5)
+				warningNotification("SaladWare", "Loading , also you cant turn it off lol", 5)
 				
 			--mastadanws method, i just replaced the assets
             local Settings = {
