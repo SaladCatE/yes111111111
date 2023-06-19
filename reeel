@@ -4803,7 +4803,7 @@ runFunction(function()
 				local root = newCharacter:WaitForChild("HumanoidRootPart")
 				local check = (lplr:GetAttribute("LastTeleported") - lplr:GetAttribute("SpawnTime")) < 1
 
-				wait(2) -- 2-second delay before teleporting
+				task.wait(0.7)
 
 				con = game:GetService("RunService").Heartbeat:Connect(function(dt)
 					local dist = ((check and 700 or 1200) * dt)
