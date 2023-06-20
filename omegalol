@@ -5825,11 +5825,20 @@ local function char(v)
                 shared.clients.ClientUsers[v.Name] = "EXPLOITER"
                 break
             end
-            if NoNameTagDetector.Enabled and (not v.Character:FindFirstChild("Head") or not v.Character.Head:FindFirstChild("Nametag")) then
-                warningNotification("SaladWare Private", "NoNameTag detected on " .. v.Name .. ".", 5)
-                shared.clients.ClientUsers[v.Name] = "EXPLOITER"
-                break
-            end
+if NoNameTagDetector.Enabled then
+    if v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health <= 0 then
+        if not v.Character:FindFirstChild("Head") or not v.Character.Head:FindFirstChild("Nametag") then
+            print("dead character")
+            shared.clients.ClientUsers[v.Name] = "ok"
+            break
+        end
+    elseif v.Character:FindFirstChild("Head") and not v.Character.Head:FindFirstChild("Nametag") then
+        warningNotification("SaladWare Private", "NoNameTag detected on " .. v.Name .. ".", 5)
+        shared.clients.ClientUsers[v.Name] = "EXPLOITER"
+        break
+    end
+end
+
 			if TPRedirectionDetector.Enabled then
 				local teleportEvent = v.Character.Humanoid.Touched:Connect(function(part)
 					if part:IsA("BasePart") and part.Name == "HumanoidRootPart" then
