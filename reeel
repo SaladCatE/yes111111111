@@ -6423,7 +6423,58 @@ game:GetService("Workspace")[game.Players.LocalPlayer.Name]:FindFirstChildOfClas
 		end
 	})
 
+runFunction(function()
+    local InstantKill = {Enabled = false}
 
+    InstantKill = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+        Name = "InstantKill",
+        Function = function(callback)
+            if callback then 
+                task.spawn(function()
+                    repeat
+                        task.wait()
+                        local args = {
+                            [1] = {
+                                ["weapon"] = "diamond_great_hammer",
+                                ["chargeRatio"] = 1
+                            }
+                        }
+
+                        game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("SwordSwingMiss"):FireServer(unpack(args))
+                    until not InstantKill.Enabled
+                end)
+            end
+        end
+    })
+end)
+
+local SkyScytheVal = false
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local NetManaged = ReplicatedStorage:WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged")
+
+local function FireSkyScytheSpin()
+    NetManaged:WaitForChild("SkyScytheSpin"):FireServer()
+end
+
+local SkyScytheExploit = GuiLibrary["ObjectsThatCanBeSaved"]["BlatantWindow"]["Api"].CreateOptionsButton({
+    Name = "InstantSkill SkyScythe",
+    Function = function(callback)
+        if callback then
+            local success, err = pcall(FireSkyScytheSpin)
+            if success then
+                SkyScytheVal = true
+                while SkyScytheVal do
+                    task.wait()
+                    FireSkyScytheSpin()
+                end
+            else
+                warnnotify("SkyScytheExploit", "Item not found")
+            end
+        else
+            SkyScytheVal = false
+        end
+    end
+})
 
 	runFunction(function()
 		local Enabled = false
@@ -6906,6 +6957,7 @@ runFunction(function()
 		Function = function() end
 	})
 end)
+
 
 runFunction(function()
 	local oldCalculateAim
