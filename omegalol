@@ -4151,6 +4151,9 @@ for i, plr in pairs(Players) do
 	end
 })
 
+
+warningNotification("Discontinued", "SaladWare is discontinued since the community is braindead and wants only skids, goodbye", 5)
+
 runFunction(function()
 	local deb
 	local con
