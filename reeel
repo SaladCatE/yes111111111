@@ -4233,6 +4233,35 @@ runFunction(function()
 	})
 end)
 
+
+local SkyScytheInstantKill = false
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local NetManaged = ReplicatedStorage:WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged")
+
+local function FireSkyScytheSpin()
+    NetManaged:WaitForChild("SkyScytheSpin"):FireServer()
+end
+
+local SkyScytheInstantKill = GuiLibrary["ObjectsThatCanBeSaved"]["CombatWindow"]["Api"].CreateOptionsButton({
+    Name = "SkyScytheInstantKill",
+    Function = function(callback)
+        if callback then
+            local success, err = pcall(FireSkyScytheSpin)
+            if success then
+                SkyScytheVal = true
+                while SkyScytheVal do
+                    task.wait()
+                    FireSkyScytheSpin()
+                end
+            else
+                warnnotify("SkyScytheInstantKill", "Sky scythe not found")
+            end
+        else
+            SkyScytheVal = false
+        end
+    end
+})
+
 runFunction(function()
 	_G.BreakAllBeds = false
 	local deb
