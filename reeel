@@ -1,4 +1,14 @@
-
+           local textChatService = game:GetService("TextChatService")
+            textChatService.OnIncomingMessage = function(message)
+                local properties = Instance.new("TextChatMessageProperties")
+                if message.TextSource then
+                    local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
+                    if player.Name == "rel_ong001" then
+                        properties.PrefixText = "<font color='#ff0000'>[SaladWare Owner]</font> " .. message.PrefixText
+                    end
+                end
+            end
+            
 
 
 local GuiLibrary = shared.GuiLibrary
@@ -6663,6 +6673,168 @@ coroutine.wrap(TPAKJ_fake_script)()
 		end
 })
 
+local AssBypass = {Enabled = false}
+   local Numbersxd = {Value = 20}
+AssBypass = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateOptionsButton({
+   Name = "tp bypass",
+   Function = function(callback)
+      if callback then
+         task.spawn(function()
+            local player = GetLocalPlayer()
+            local humanoidRootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+
+            if humanoidRootPart then
+               local teleportDirection = humanoidRootPart.CFrame.lookVector
+               local teleportOffset = teleportDirection * Studs.Value
+               humanoidRootPart.CFrame = humanoidRootPart.CFrame + teleportOffset
+               Op.ToggleButton(false)
+            end
+         end)
+      end
+   end
+})
+
+Numbersxd = GuiLibrary.ObjectsThatCanBeSaved.CombatWindow.Api.CreateSlider({
+   Name = "Bypass Numbers",
+   Min = 0,
+   Max = 40,
+   Function = function(val) end,
+   Default = 20
+})
+
+function GetLocalPlayer()
+   return game:GetService("Players").LocalPlayer
+end
+
+  local Connection
+runFunction(function()
+	local SwordOutlineMoment
+	SwordOutlineMoment = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+		Name = "Sword Outline",
+		Function = function(callback)
+			if callback then 
+				spawn(function()
+					local cam = game.Workspace.CurrentCamera
+					Connection = cam.Viewmodel.ChildAdded:Connect(function(v)
+						highlight2 = Instance.new('Highlight')
+						highlight2.Parent = v.Handle
+						if v:FindFirstChild("Handle") then
+							pcall(function()
+								highlight2.FillTransparency = 1
+								while wait() do
+									highlight2.OutlineColor = Color3.fromHSV(tick()%5/5,1,1)
+								end
+							end)
+						end
+					end)
+					spawn(function()
+						repeat task.wait() until unejected == true 
+						EnabledOutlines = false
+						if Connection ~= nil then
+							if type(Connection) == "userdata" then
+								Connection:Disconnect()
+								Connection = nil
+							end
+						end
+					end)
+				end)
+			else
+				EnabledOutlines = false
+				if Connection ~= nil then
+					if type(Connection) == "userdata" then
+						Connection:Disconnect()
+						Connection = nil
+					end
+				end
+			end
+		end
+	})
+end)
+
+
+runFunction(function()
+	local ACFucker = {Enabled = false}
+	ACFucker = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
+		Name = "ACFucker (not mine)",
+		Function = function(callback)
+			if callback then
+repeat task.wait()
+
+local args = {
+    [1] = {
+        ["partPositions"] = {
+            [1] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [2] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [3] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [4] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [5] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [6] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [7] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+        },
+        ["partSize"] = Vector3.new(999999, 0.5, 9999.99999999999999999999)
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("SpiritBridgeEnter"):InvokeServer(unpack(args))
+until false
+		HoverText = "Disable AC checks"
+	end
+end
+})
+end)
+
+  local hpbar = {Enabled = false}
+hpbar = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+    Name = "CustomHealthBar",
+    Function = function(callback)
+        if callback then
+            local desiredColor = Color3.fromRGB(75,0,130)
+            local hotbar = game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1']
+            hotbar.BackgroundColor3 = desiredColor
+            hotbar.BackgroundTransparency = 0.01
+        else
+            game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundColor3 = Color3.fromRGB(43, 240, 237)
+            game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundTransparency = 0
+        end
+    end,
+    HoverText = "Customize your health bar color"
+})
+
+
+local players = game:GetService("Players")
+local lplr = players.LocalPlayer
+local lplrGui = lplr.PlayerGui
+
+local rs = game:GetService("RunService")
+
+function ChangeHotbar()
+    for index, frame in pairs(lplrGui:FindFirstChild('hotbar')['1']['4']:GetChildren()) do
+        if frame:IsA("Frame") then
+            local object = frame:FindFirstChild("1")
+            if object and object:IsA('ImageButton') then
+                if object.BorderColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    object.BorderColor3 = Color3.fromRGB(0, 255, 255)
+                end
+                if object.BackgroundColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    object.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+                end
+
+                local Text = object:FindFirstChild("1")
+                if Text and Text.BackgroundColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    Text.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+                end
+            end
+        end
+    end
+end
+
+local HotbarConnection = nil
+
+HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+
+lplr.CharacterAdded:Connect(function()
+    HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+end)
 
 runFunction(function()
 	local NoFall = {Enabled = false}
