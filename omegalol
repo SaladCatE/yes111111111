@@ -6672,6 +6672,89 @@ coroutine.wrap(TPAKJ_fake_script)()
 		end
 })
 
+runFunction(function()
+	local ACFucker = {Enabled = false}
+	ACFucker = GuiLibrary.ObjectsThatCanBeSaved.WorldWindow.Api.CreateOptionsButton({
+		Name = "ACFucker (not mine)",
+		Function = function(callback)
+			if callback then
+repeat task.wait()
+
+local args = {
+    [1] = {
+        ["partPositions"] = {
+            [1] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [2] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [3] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [4] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [5] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [6] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame),
+            [7] = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+        },
+        ["partSize"] = Vector3.new(999999, 0.5, 9999.99999999999999999999)
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("SpiritBridgeEnter"):InvokeServer(unpack(args))
+until false
+		HoverText = "Disable AC checks"
+	end
+end
+})
+end)
+
+  local hpbar = {Enabled = false}
+hpbar = GuiLibrary.ObjectsThatCanBeSaved.RenderWindow.Api.CreateOptionsButton({
+    Name = "CustomHealthBar",
+    Function = function(callback)
+        if callback then
+            local desiredColor = Color3.fromRGB(75,0,130)
+            local hotbar = game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1']
+            hotbar.BackgroundColor3 = desiredColor
+            hotbar.BackgroundTransparency = 0.01
+        else
+            game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundColor3 = Color3.fromRGB(43, 240, 237)
+            game.Players.LocalPlayer.PlayerGui.hotbar['1'].HotbarHealthbarContainer.HealthbarProgressWrapper['1'].BackgroundTransparency = 0
+        end
+    end,
+    HoverText = "Changes your healthbar color"
+})
+
+local players = game:GetService("Players")
+local lplr = players.LocalPlayer
+local lplrGui = lplr.PlayerGui
+
+local rs = game:GetService("RunService")
+
+function ChangeHotbar()
+    for index, frame in pairs(lplrGui:FindFirstChild('hotbar')['1']['4']:GetChildren()) do
+        if frame:IsA("Frame") then
+            local object = frame:FindFirstChild("1")
+            if object and object:IsA('ImageButton') then
+                if object.BorderColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    object.BorderColor3 = Color3.fromRGB(0, 255, 255)
+                end
+                if object.BackgroundColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    object.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+                end
+
+                local Text = object:FindFirstChild("1")
+                if Text and Text.BackgroundColor3 ~= Color3.fromRGB(0, 255, 255) then
+                    Text.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+                end
+            end
+        end
+    end
+end
+
+local HotbarConnection = nil
+
+HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+
+lplr.CharacterAdded:Connect(function()
+    HotbarConnection = rs.PreRender:Connect(ChangeHotbar)
+end)
+
 
 runFunction(function()
 	local NoFall = {Enabled = false}
