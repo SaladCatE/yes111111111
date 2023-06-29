@@ -1,4 +1,296 @@
+local WhitelistChecker = Instance.new("ScreenGui")
+local Blur = Instance.new("Frame")
+local Main = Instance.new("Frame")
+local Panel = Instance.new("Frame")
+local Version = Instance.new("TextLabel")
+local TitleLabel = Instance.new("TextLabel")
+local Copyright = Instance.new("TextLabel")
+local JustAnImageLol = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local Explanation = Instance.new("TextLabel")
+local _1 = Instance.new("TextLabel")
+local _2 = Instance.new("TextLabel")
+local _3 = Instance.new("TextLabel")
+local Info = Instance.new("TextLabel")
+local Bar = Instance.new("Frame")
+local Progress = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
 
+
+WhitelistChecker.Name = "WhitelistChecker"
+WhitelistChecker.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+WhitelistChecker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Blur.Name = "Blur"
+Blur.Parent = WhitelistChecker
+Blur.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Blur.BackgroundTransparency = 0.850
+Blur.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Blur.BorderSizePixel = 0
+Blur.Position = UDim2.new(-0.757844448, 0, -1.83009624, 0)
+Blur.Size = UDim2.new(0, 3612, 0, 3004)
+
+Main.Name = "Main"
+Main.Parent = Blur
+Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 5
+Main.Position = UDim2.new(0.562774539, 0, 0.682081997, 0)
+Main.Size = UDim2.new(0, 783, 0, 409)
+
+Panel.Name = "Panel"
+Panel.Parent = Main
+Panel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Panel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Panel.BorderSizePixel = 0
+Panel.Position = UDim2.new(-0.0140485317, 0, -0.0537897311, 0)
+Panel.Size = UDim2.new(0, 805, 0, 22)
+
+Version.Name = "Version"
+Version.Parent = Panel
+Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Version.BackgroundTransparency = 1.000
+Version.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Version.BorderSizePixel = 0
+Version.Size = UDim2.new(0, 215, 0, 22)
+Version.Font = Enum.Font.SciFi
+Version.Text = "V1.0"
+Version.TextColor3 = Color3.fromRGB(255, 255, 255)
+Version.TextScaled = true
+Version.TextSize = 14.000
+Version.TextWrapped = true
+Version.TextXAlignment = Enum.TextXAlignment.Left
+
+TitleLabel.Name = "Title Label "
+TitleLabel.Parent = Panel
+TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.BackgroundTransparency = 1.000
+TitleLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TitleLabel.BorderSizePixel = 0
+TitleLabel.Position = UDim2.new(0.349068314, 0, 0, 0)
+TitleLabel.Size = UDim2.new(0, 215, 0, 22)
+TitleLabel.Font = Enum.Font.SciFi
+TitleLabel.Text = "SaladWare Whitelist Checker"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.TextScaled = true
+TitleLabel.TextSize = 14.000
+TitleLabel.TextWrapped = true
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+Copyright.Name = "Copyright"
+Copyright.Parent = Panel
+Copyright.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Copyright.BackgroundTransparency = 1.000
+Copyright.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Copyright.BorderSizePixel = 0
+Copyright.Position = UDim2.new(0.390062064, 0, 18.2272739, 0)
+Copyright.Size = UDim2.new(0, 321, 0, 22)
+Copyright.Font = Enum.Font.SciFi
+Copyright.Text = "Copyright @ SaladExploits"
+Copyright.TextColor3 = Color3.fromRGB(255, 255, 255)
+Copyright.TextSize = 14.000
+Copyright.TextWrapped = true
+Copyright.TextXAlignment = Enum.TextXAlignment.Left
+
+JustAnImageLol.Name = "JustAnImageLol"
+JustAnImageLol.Parent = Panel
+JustAnImageLol.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+JustAnImageLol.BackgroundTransparency = 1.000
+JustAnImageLol.Position = UDim2.new(0.96024847, 0, 0, 0)
+JustAnImageLol.Size = UDim2.new(0, 32, 0, 22)
+JustAnImageLol.Image = "rbxassetid://7962146544"
+
+UICorner.Parent = JustAnImageLol
+
+Explanation.Name = "Explanation"
+Explanation.Parent = Main
+Explanation.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Explanation.BackgroundTransparency = 1.000
+Explanation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Explanation.BorderSizePixel = 0
+Explanation.Position = UDim2.new(0, 0, 0.02689486, 0)
+Explanation.Size = UDim2.new(0, 720, 0, 22)
+Explanation.Font = Enum.Font.Sarpanch
+Explanation.Text = "This Window will check your whitelist type, examples below:"
+Explanation.TextColor3 = Color3.fromRGB(255, 255, 255)
+Explanation.TextSize = 30.000
+Explanation.TextWrapped = true
+
+_1.Name = "1)"
+_1.Parent = Main
+_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_1.BackgroundTransparency = 1.000
+_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_1.BorderSizePixel = 0
+_1.Position = UDim2.new(0.0383141786, 0, 0.1002445, 0)
+_1.Size = UDim2.new(0, 720, 0, 28)
+_1.Font = Enum.Font.Sarpanch
+_1.Text = "1) Checks if you have default whitelist"
+_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+_1.TextSize = 30.000
+_1.TextWrapped = true
+_1.TextXAlignment = Enum.TextXAlignment.Left
+
+_2.Name = "2)"
+_2.Parent = Main
+_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_2.BackgroundTransparency = 1.000
+_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0.0383141786, 0, 0.168704152, 0)
+_2.Size = UDim2.new(0, 720, 0, 28)
+_2.Font = Enum.Font.Sarpanch
+_2.Text = "2) Checks what config you're using"
+_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+_2.TextSize = 30.000
+_2.TextWrapped = true
+_2.TextXAlignment = Enum.TextXAlignment.Left
+
+_3.Name = "3)"
+_3.Parent = Main
+_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_3.BackgroundTransparency = 1.000
+_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_3.BorderSizePixel = 0
+_3.Position = UDim2.new(0.0383141786, 0, 0.237163812, 0)
+_3.Size = UDim2.new(0, 720, 0, 28)
+_3.Font = Enum.Font.Sarpanch
+_3.Text = "3) Checks if you're whitelisted for the config you using"
+_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+_3.TextSize = 30.000
+_3.TextWrapped = true
+_3.TextXAlignment = Enum.TextXAlignment.Left
+
+Info.Name = "Info"
+Info.Parent = Main
+Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info.BackgroundTransparency = 1.000
+Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Info.BorderSizePixel = 0
+Info.Position = UDim2.new(0.0395913161, 0, 0.371638149, 0)
+Info.Size = UDim2.new(0, 720, 0, 99)
+Info.Font = Enum.Font.Sarpanch
+Info.Text = "Dont worry, this process wont take long, estimated time: 7/15 seconds"
+Info.TextColor3 = Color3.fromRGB(255, 255, 255)
+Info.TextSize = 30.000
+Info.TextWrapped = true
+Info.TextXAlignment = Enum.TextXAlignment.Left
+
+Bar.Name = "Bar"
+Bar.Parent = Main
+Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bar.Position = UDim2.new(0.141427904, 0, 0.827313304, 0)
+Bar.Size = UDim2.new(0, 561, 0, 24)
+
+Progress.Name = "Progress"
+Progress.Parent = Bar
+Progress.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Progress.Size = UDim2.new(0, 0, 1, 0)
+
+UICorner_2.Parent = Progress
+
+UICorner_3.Parent = Bar
+
+TextLabel.Parent = Bar
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.00398934679, 0, -0.21282053, 0)
+TextLabel.Size = UDim2.new(0, 563, 0, 29)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.Text = "Checking"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+
+local function BCWG_fake_script() -- Blur.LocalScript 
+	local script = Instance.new('LocalScript', Blur)
+
+	local Blur = script.Parent
+	task.wait(13.3)
+	Blur:Destroy()
+end
+coroutine.wrap(BCWG_fake_script)()
+local function GDZTYP_fake_script() -- Panel.LocalScript 
+	local script = Instance.new('LocalScript', Panel)
+
+	local Panel = script.Parent
+	local fadeTime = 1 
+	Panel.Transparency = 1
+	local TweenService = game:GetService("TweenService")
+	
+	local properties = {
+		Transparency = 0,
+	}
+	
+	local tweenInfo = TweenInfo.new(fadeTime, Enum.EasingStyle.Linear)
+	local tween = TweenService:Create(Panel, tweenInfo, properties)
+	
+	tween:Play()
+	
+end
+coroutine.wrap(GDZTYP_fake_script)()
+local function FBJJUE_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	local Main = script.Parent
+	local startPos = Main.Position
+	local endPos = UDim2.new(startPos.X.Scale, startPos.X.Offset, startPos.Y.Scale - 1, startPos.Y.Offset)
+	local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+	local tween2 = game:GetService("TweenService"):Create(Main, tweenInfo, { Position = endPos })
+	local fadeTime = 1 
+	Main.Transparency = 1
+	local TweenService = game:GetService("TweenService")
+	
+	local properties = {
+		Transparency = 0,
+	}
+	
+	local tweenInfo = TweenInfo.new(fadeTime, Enum.EasingStyle.Linear)
+	local tween = TweenService:Create(Main, tweenInfo, properties)
+	
+	tween:Play()
+	
+	task.wait(12)
+	
+	tween2:Play()
+	
+end
+coroutine.wrap(FBJJUE_fake_script)()
+local function TKXS_fake_script() -- Progress.LocalScript 
+	local script = Instance.new('LocalScript', Progress)
+
+	script.Parent:TweenSize(UDim2.new(1,0,1,0),"InOut","Sine",10)
+	
+end
+coroutine.wrap(TKXS_fake_script)()
+local function ZWXPI_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local textLabel = script.Parent
+	local value = 0 
+	
+	while true do
+		textLabel.Text = tostring(value) .. "%" 
+		value = value + 1 
+	
+		if value == 42 then 
+			textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+		
+		if value == 100 then 
+			break
+		end
+	
+		wait(0.1)
+	end
+end
+coroutine.wrap(ZWXPI_fake_script)()
+
+task.wait(14)
 
 
 local GuiLibrary = shared.GuiLibrary
