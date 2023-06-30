@@ -10878,6 +10878,8 @@ textChatService.OnIncomingMessage = function(message)
         local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
         if player.Name == "rel_ong001" then
             properties.PrefixText = "<font color='#ff0000'>[SALADWARE OWNER]</font> " .. message.PrefixText
+		elseif player.Name == "littleayto" then 
+			properties.PrefixText = "<font color='#4B0082'>[SALADWARE PRIVATE]</font> " .. message.PrefixText
         end
     end
     return properties
