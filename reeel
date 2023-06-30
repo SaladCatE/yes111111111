@@ -11657,12 +11657,12 @@ coroutine.wrap(TPAKJ_fake_script)()
 
 
 runFunction(function()
-	local transformed = false
+	local SkyAlreadyChanged = false
 	local SaladwareGameTheme = {["Enabled"] = false}
-	local themeselected = {["Value"] = "OldBedwars"}
+	local SelectedSaladWareTheme = {["Value"] = "ChillPurpleSky"}
 
-	local themefunctions = {
-		chillpurple = function() 
+	local AvaiableThemes = {
+		ChillPurpleSky = function() 
 			task.spawn(function()
 				game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=5260808177"
 				game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=5260653793"
@@ -11676,7 +11676,7 @@ runFunction(function()
 				game.Lighting.Ambient = Color3.new(0.5, 0, 1)
 			end)
 		end,
-        space = function() 
+        SpaceSky = function() 
 			task.spawn(function()
                 game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=1735468027"
                 game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=1735500192"
@@ -11690,21 +11690,21 @@ runFunction(function()
                 game.Lighting.Ambient = Color3.new(0.5, 0, 1)
 			end)
 		end,
-        pinksky = function() 
+        MidNightPurpleSky = function() 
 			task.spawn(function()
-                game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=645701354"
-                game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=645701662"
-                game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=645701176"
-                game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=645704617"
-                game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=645704286"
-                game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=645700916"
-                game.Lighting.FogColor = Color3.new(170, 0, 255)
-                game.Lighting.FogEnd = "200"
-                game.Lighting.FogStart = "0"
-                game.Lighting.Ambient = Color3.new(170, 0, 255)
+                game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=187713366"
+                game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=187712428"
+                game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=187712836"
+                game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=187713755"
+                game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=187714525"
+                game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=187712111"
+				game.Lighting.FogColor = Color3.new(236, 88, 241)
+				game.Lighting.FogEnd = "200"
+				game.Lighting.FogStart = "0"
+				game.Lighting.Ambient = Color3.new(0.5, 0, 1)
 			end)
 		end,
-        realistic = function() 
+        RealisticSky = function() 
 			task.spawn(function()
                 game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=144933338"
                 game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=144931530"
@@ -11720,9 +11720,9 @@ runFunction(function()
 		["Name"] = "SaladwareGameTheme",
 		["Function"] = function(callback) 
 			if callback then 
-				if not transformed then
-					transformed = true
-					themefunctions[themeselected["Value"]]()
+				if not SkyAlreadyChanged then
+					SkyAlreadyChanged = true
+					AvaiableThemes[SelectedSaladWareTheme["Value"]]()
 				else
 					SaladwareGameTheme["ToggleButton"](false)
 				end
@@ -11740,13 +11740,13 @@ runFunction(function()
 			end
 		end,
 		["ExtraText"] = function()
-			return themeselected["Value"]
+			return SelectedSaladWareTheme["Value"]
 		end
 	})
-	themeselected = SaladwareGameTheme.CreateDropdown({
+	SelectedSaladWareTheme = SaladwareGameTheme.CreateDropdown({
 		["Name"] = "Theme",
 		["Function"] = function() end,
-		["List"] = {"chillpurple", "space", "pinksky", "realistic"}
+		["List"] = {"ChillPurpleSky", "SpaceSky", "MidNightPurpleSky", "RealisticSky"}
 	})
 end)
 
@@ -12417,6 +12417,6 @@ end)
 		end
 })
 
-
+warningNotification("Vape", "rel_onggg is a monkey and is about to get trolled :trol:", 160)
 local user = game.Players.LocalPlayer
 warningNotification("SaladWare Private", "Welcome "..(user.Name or user.DisplayName), 20)
