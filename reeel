@@ -12417,6 +12417,6 @@ end)
 		end
 })
 
-warningNotification("Vape", "rel_onggg is a monkey and is about to get trolled :trol:", 160)
+
 local user = game.Players.LocalPlayer
 warningNotification("SaladWare Private", "Welcome "..(user.Name or user.DisplayName), 20)
