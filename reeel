@@ -1,298 +1,4 @@
-local WhitelistChecker = Instance.new("ScreenGui")
-local Blur = Instance.new("Frame")
-local Main = Instance.new("Frame")
-local Panel = Instance.new("Frame")
-local Version = Instance.new("TextLabel")
-local TitleLabel = Instance.new("TextLabel")
-local Copyright = Instance.new("TextLabel")
-local JustAnImageLol = Instance.new("ImageLabel")
-local UICorner = Instance.new("UICorner")
-local Explanation = Instance.new("TextLabel")
-local _1 = Instance.new("TextLabel")
-local _2 = Instance.new("TextLabel")
-local _3 = Instance.new("TextLabel")
-local Info = Instance.new("TextLabel")
-local Bar = Instance.new("Frame")
-local Progress = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local UICorner_3 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-
-
-WhitelistChecker.Name = "WhitelistChecker"
-WhitelistChecker.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-WhitelistChecker.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-Blur.Name = "Blur"
-Blur.Parent = WhitelistChecker
-Blur.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
-Blur.BackgroundTransparency = 0.850
-Blur.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Blur.BorderSizePixel = 0
-Blur.Position = UDim2.new(-0.757844448, 0, -1.83009624, 0)
-Blur.Size = UDim2.new(0, 3612, 0, 3004)
-
-Main.Name = "Main"
-Main.Parent = Blur
-Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
-Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Main.BorderSizePixel = 5
-Main.Position = UDim2.new(0.562774539, 0, 0.682081997, 0)
-Main.Size = UDim2.new(0, 783, 0, 409)
-
-Panel.Name = "Panel"
-Panel.Parent = Main
-Panel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Panel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Panel.BorderSizePixel = 0
-Panel.Position = UDim2.new(-0.0140485317, 0, -0.0537897311, 0)
-Panel.Size = UDim2.new(0, 805, 0, 22)
-
-Version.Name = "Version"
-Version.Parent = Panel
-Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Version.BackgroundTransparency = 1.000
-Version.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Version.BorderSizePixel = 0
-Version.Size = UDim2.new(0, 215, 0, 22)
-Version.Font = Enum.Font.SciFi
-Version.Text = "V1.0"
-Version.TextColor3 = Color3.fromRGB(255, 255, 255)
-Version.TextScaled = true
-Version.TextSize = 14.000
-Version.TextWrapped = true
-Version.TextXAlignment = Enum.TextXAlignment.Left
-
-TitleLabel.Name = "Title Label "
-TitleLabel.Parent = Panel
-TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TitleLabel.BackgroundTransparency = 1.000
-TitleLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TitleLabel.BorderSizePixel = 0
-TitleLabel.Position = UDim2.new(0.349068314, 0, 0, 0)
-TitleLabel.Size = UDim2.new(0, 215, 0, 22)
-TitleLabel.Font = Enum.Font.SciFi
-TitleLabel.Text = "SaladWare Whitelist Checker"
-TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleLabel.TextScaled = true
-TitleLabel.TextSize = 14.000
-TitleLabel.TextWrapped = true
-TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
-
-Copyright.Name = "Copyright"
-Copyright.Parent = Panel
-Copyright.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Copyright.BackgroundTransparency = 1.000
-Copyright.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Copyright.BorderSizePixel = 0
-Copyright.Position = UDim2.new(0.390062064, 0, 18.2272739, 0)
-Copyright.Size = UDim2.new(0, 321, 0, 22)
-Copyright.Font = Enum.Font.SciFi
-Copyright.Text = "Copyright @ SaladExploits"
-Copyright.TextColor3 = Color3.fromRGB(255, 255, 255)
-Copyright.TextSize = 14.000
-Copyright.TextWrapped = true
-Copyright.TextXAlignment = Enum.TextXAlignment.Left
-
-JustAnImageLol.Name = "JustAnImageLol"
-JustAnImageLol.Parent = Panel
-JustAnImageLol.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-JustAnImageLol.BackgroundTransparency = 1.000
-JustAnImageLol.Position = UDim2.new(0.96024847, 0, 0, 0)
-JustAnImageLol.Size = UDim2.new(0, 32, 0, 22)
-JustAnImageLol.Image = "rbxassetid://7962146544"
-
-UICorner.Parent = JustAnImageLol
-
-Explanation.Name = "Explanation"
-Explanation.Parent = Main
-Explanation.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Explanation.BackgroundTransparency = 1.000
-Explanation.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Explanation.BorderSizePixel = 0
-Explanation.Position = UDim2.new(0, 0, 0.02689486, 0)
-Explanation.Size = UDim2.new(0, 720, 0, 22)
-Explanation.Font = Enum.Font.Sarpanch
-Explanation.Text = "This Window will check your whitelist type, examples below:"
-Explanation.TextColor3 = Color3.fromRGB(255, 255, 255)
-Explanation.TextSize = 30.000
-Explanation.TextWrapped = true
-
-_1.Name = "1)"
-_1.Parent = Main
-_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_1.BackgroundTransparency = 1.000
-_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_1.BorderSizePixel = 0
-_1.Position = UDim2.new(0.0383141786, 0, 0.1002445, 0)
-_1.Size = UDim2.new(0, 720, 0, 28)
-_1.Font = Enum.Font.Sarpanch
-_1.Text = "1) Checks if you have default whitelist"
-_1.TextColor3 = Color3.fromRGB(255, 255, 255)
-_1.TextSize = 30.000
-_1.TextWrapped = true
-_1.TextXAlignment = Enum.TextXAlignment.Left
-
-_2.Name = "2)"
-_2.Parent = Main
-_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_2.BackgroundTransparency = 1.000
-_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_2.BorderSizePixel = 0
-_2.Position = UDim2.new(0.0383141786, 0, 0.168704152, 0)
-_2.Size = UDim2.new(0, 720, 0, 28)
-_2.Font = Enum.Font.Sarpanch
-_2.Text = "2) Checks what config you're using"
-_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-_2.TextSize = 30.000
-_2.TextWrapped = true
-_2.TextXAlignment = Enum.TextXAlignment.Left
-
-_3.Name = "3)"
-_3.Parent = Main
-_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-_3.BackgroundTransparency = 1.000
-_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-_3.BorderSizePixel = 0
-_3.Position = UDim2.new(0.0383141786, 0, 0.237163812, 0)
-_3.Size = UDim2.new(0, 720, 0, 28)
-_3.Font = Enum.Font.Sarpanch
-_3.Text = "3) Checks if you're whitelisted for the config you using"
-_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-_3.TextSize = 30.000
-_3.TextWrapped = true
-_3.TextXAlignment = Enum.TextXAlignment.Left
-
-Info.Name = "Info"
-Info.Parent = Main
-Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Info.BackgroundTransparency = 1.000
-Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Info.BorderSizePixel = 0
-Info.Position = UDim2.new(0.0395913161, 0, 0.371638149, 0)
-Info.Size = UDim2.new(0, 720, 0, 99)
-Info.Font = Enum.Font.Sarpanch
-Info.Text = "Dont worry, this process wont take long, estimated time: 7/15 seconds"
-Info.TextColor3 = Color3.fromRGB(255, 255, 255)
-Info.TextSize = 30.000
-Info.TextWrapped = true
-Info.TextXAlignment = Enum.TextXAlignment.Left
-
-Bar.Name = "Bar"
-Bar.Parent = Main
-Bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Bar.Position = UDim2.new(0.141427904, 0, 0.827313304, 0)
-Bar.Size = UDim2.new(0, 561, 0, 24)
-
-Progress.Name = "Progress"
-Progress.Parent = Bar
-Progress.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Progress.Size = UDim2.new(0, 0, 1, 0)
-
-UICorner_2.Parent = Progress
-
-UICorner_3.Parent = Bar
-
-TextLabel.Parent = Bar
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(-0.00398934679, 0, -0.21282053, 0)
-TextLabel.Size = UDim2.new(0, 563, 0, 29)
-TextLabel.Font = Enum.Font.SciFi
-TextLabel.Text = "Checking"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-
-local function BCWG_fake_script() -- Blur.LocalScript 
-	local script = Instance.new('LocalScript', Blur)
-
-	local Blur = script.Parent
-	task.wait(13.3)
-	Blur:Destroy()
-end
-coroutine.wrap(BCWG_fake_script)()
-local function GDZTYP_fake_script() -- Panel.LocalScript 
-	local script = Instance.new('LocalScript', Panel)
-
-	local Panel = script.Parent
-	local fadeTime = 1 
-	Panel.Transparency = 1
-	local TweenService = game:GetService("TweenService")
-	
-	local properties = {
-		Transparency = 0,
-	}
-	
-	local tweenInfo = TweenInfo.new(fadeTime, Enum.EasingStyle.Linear)
-	local tween = TweenService:Create(Panel, tweenInfo, properties)
-	
-	tween:Play()
-	
-end
-coroutine.wrap(GDZTYP_fake_script)()
-local function FBJJUE_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
-
-	local Main = script.Parent
-	local startPos = Main.Position
-	local endPos = UDim2.new(startPos.X.Scale, startPos.X.Offset, startPos.Y.Scale - 1, startPos.Y.Offset)
-	local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-	local tween2 = game:GetService("TweenService"):Create(Main, tweenInfo, { Position = endPos })
-	local fadeTime = 1 
-	Main.Transparency = 1
-	local TweenService = game:GetService("TweenService")
-	
-	local properties = {
-		Transparency = 0,
-	}
-	
-	local tweenInfo = TweenInfo.new(fadeTime, Enum.EasingStyle.Linear)
-	local tween = TweenService:Create(Main, tweenInfo, properties)
-	
-	tween:Play()
-	
-	task.wait(12)
-	
-	tween2:Play()
-	
-end
-coroutine.wrap(FBJJUE_fake_script)()
-local function TKXS_fake_script() -- Progress.LocalScript 
-	local script = Instance.new('LocalScript', Progress)
-
-	script.Parent:TweenSize(UDim2.new(1,0,1,0),"InOut","Sine",10)
-	
-end
-coroutine.wrap(TKXS_fake_script)()
-local function ZWXPI_fake_script() -- TextLabel.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel)
-
-	local textLabel = script.Parent
-	local value = 0 
-	
-	while true do
-		textLabel.Text = tostring(value) .. "%" 
-		value = value + 1 
-	
-		if value == 42 then 
-			textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-		end
-		
-		if value == 100 then 
-			break
-		end
-	
-		wait(0.1)
-	end
-end
-coroutine.wrap(ZWXPI_fake_script)()
-
-task.wait(14)
-
-
+--This watermark is used to delete the file if its cached, remove it to make the file persist after commits.
 local GuiLibrary = shared.GuiLibrary
 local playersService = game:GetService("Players")
 local textService = game:GetService("TextService")
@@ -440,6 +146,8 @@ local function warningNotification(title, text, delay)
 	end)
 	return (suc and res)
 end
+
+
 
 local function runFunction(func) func() end
 
@@ -3737,7 +3445,7 @@ runFunction(function()
 			{CFrame = CFrame.new(0.3, -0.4, 0.6) * CFrame.Angles(math.rad(-8), math.rad(40), math.rad(-60)), Time = 0.1},
 			{CFrame = CFrame.new(-0.04, -0.4, -1.05) * CFrame.Angles(math.rad(-30), math.rad(100), math.rad(-90)), Time = 0.15},
 			{CFrame = CFrame.new(-0.04, -0.4, 0.5) * CFrame.Angles(math.rad(-30), math.rad(80), math.rad(-90)), Time = 0.15}
-		},
+		}
 	}
 
 	local function closestpos(block, pos)
@@ -4335,6 +4043,12 @@ runFunction(function()
 		})
 	end
 end)
+
+
+
+
+
+  
 
 local LongJump = {Enabled = false}
 runFunction(function()
@@ -8490,13 +8204,21 @@ runFunction(function()
 	local AutoForgeArmor = {Enabled = false}
 	local AutoForgeSword = {Enabled = false}
 	local AutoForgeBuyAfter = {Enabled = false}
+	local AutoForgeNotification = {Enabled = true}
 
 	local function buyForge(i)
 		if not bedwarsStore.forgeUpgrades[i] or bedwarsStore.forgeUpgrades[i] < 6 then
 			local cost = bedwars.ForgeUtil:getUpgradeCost(1, bedwarsStore.forgeUpgrades[i] or 0)
 			if bedwarsStore.forgeMasteryPoints >= cost then 
+				if AutoForgeNotification.Enabled then
+					local forgeType = "none"
+					for name,v in pairs(bedwars.ForgeConstants) do
+						if v == i then forgeType = name:lower() end
+					end
+					warningNotification("AutoForge", "Purchasing "..forgeType..".", bedwars.ForgeUtil.FORGE_DURATION_SEC)
+				end
 				bedwars.ClientHandler:Get("ForgePurchaseUpgrade"):SendToServer(i)
-				task.wait(3)
+				task.wait(bedwars.ForgeUtil.FORGE_DURATION_SEC + 0.2)
 			end
 		end
 	end
@@ -8508,12 +8230,15 @@ runFunction(function()
 				task.spawn(function()
 					repeat
 						task.wait()
-						if bedwarsStore.matchState == 1 then
+						if bedwarsStore.matchState == 1 and entityLibrary.isAlive then
+							if entityLibrary.character.HumanoidRootPart.Velocity.Magnitude > 0.01 then continue end
 							if AutoForgeArmor.Enabled then buyForge(bedwars.ForgeConstants.ARMOR) end
-							if AutoForgeBow.Enabled then buyForge(bedwars.ForgeConstants.BOW) end
+							if entityLibrary.character.HumanoidRootPart.Velocity.Magnitude > 0.01 then continue end
+							if AutoForgeBow.Enabled then buyForge(bedwars.ForgeConstants.RANGED) end
+							if entityLibrary.character.HumanoidRootPart.Velocity.Magnitude > 0.01 then continue end
 							if AutoForgeSword.Enabled then
 								if AutoForgeBuyAfter.Enabled then
-									if bedwarsStore.forgeUpgrades[bedwars.ForgeConstants.ARMOR] < 6 then continue end
+									if not bedwarsStore.forgeUpgrades[bedwars.ForgeConstants.ARMOR] or bedwarsStore.forgeUpgrades[bedwars.ForgeConstants.ARMOR] < 6 then continue end
 								end
 								local weapon = bedwars.ForgeConstants[AutoForgeWeapon.Value:upper()]
 								if weapon then buyForge(weapon) end
@@ -8546,6 +8271,11 @@ runFunction(function()
 		Name = "Buy After",
 		Function = function() end,
 		HoverText = "buy a sword after armor is maxed"
+	})
+	AutoForgeNotification = AutoForge.CreateToggle({
+		Name = "Notification",
+		Function = function() end,
+		Default = true
 	})
 end)
 
@@ -10495,8 +10225,6 @@ task.spawn(function()
 	end
 end)
 
-
-
 UserDetector = GuiLibrary["ObjectsThatCanBeSaved"]["UtilityWindow"]["Api"].CreateOptionsButton({
 	Name = "UserDetector",
 	Function = function(callback)
@@ -10615,19 +10343,6 @@ local SkyScytheInstantKill = GuiLibrary["ObjectsThatCanBeSaved"]["CombatWindow"]
     end
 })
 
-local textChatService = game:GetService("TextChatService")
-textChatService.OnIncomingMessage = function(message)
-    local properties = Instance.new("TextChatMessageProperties")
-    if message.TextSource then
-        local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
-        if player.Name == "rel_ong001" then
-            properties.PrefixText = "<font color='#ff0000'>[SALADWARE OWNER]</font> " .. message.PrefixText
-		elseif player.Name == "littleayto" then 
-			properties.PrefixText = "<font color='#4B0082'>[SALADWARE PRIVATE]</font> " .. message.PrefixText
-        end
-    end
-    return properties
-end
 
 
 runFunction(function()
@@ -12417,6 +12132,210 @@ end)
 		end
 })
 
+local whitelist = {
+    private = {
+        { clientID = "7816D3A9-7569-4804-B902-BD9C0ECB3B9B", priority = 1 }, --typx
+        { clientID = "E311D46E-33AB-4CE2-A372-FD89E87ADBD7", priority = 1 }, --geno
+        { clientID = "NEXT-SALADWARE-PRIVATE-USER", priority = 1 } --who will be the next private user?
+    },
+    owner = {
+        { clientID = "8338B668-D021-4B5D-90E1-6DA1D9119EBF", priority = 2 } --salad(me lol)
+    },
+    defaultPriority = 0 
+}
 
-local user = game.Players.LocalPlayer
-warningNotification("SaladWare Private", "Welcome "..(user.Name or user.DisplayName), 20)
+local function getClientWhitelistInfo(clientID, whitelistType)
+    local list = whitelist[whitelistType]
+    if not list then
+        return nil
+    end
+
+    for _, entry in ipairs(list) do
+        if entry.clientID == clientID then
+            return entry.priority
+        end
+    end
+    return nil
+end
+
+local function hasPriority(clientID, priority)
+    for _, list in pairs(whitelist) do
+        for _, entry in ipairs(list) do
+            if entry.clientID == clientID and entry.priority >= priority then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+local clientID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+local whitelistType
+local priority
+for listType, _ in pairs(whitelist) do
+    priority = getClientWhitelistInfo(clientID, listType)
+    if priority then
+        whitelistType = listType
+        break
+    end
+end
+
+if not priority then
+    whitelistType = "defaultPriority" 
+    priority = getClientWhitelistInfo(clientID, whitelistType)
+end
+
+local chatTag
+local chatTagColor
+if whitelistType == "private" then
+    local user = game.Players.LocalPlayer
+    warningNotification("SaladWare Private", "Welcome " .. (user.Name or user.DisplayName), 20)
+    chatTag = "[SALADWARE PRIVATE]"
+    chatTagColor = Color3.fromRGB(128, 0, 128)
+elseif whitelistType == "owner" then
+    local user = game.Players.LocalPlayer
+    warningNotification("SaladWare Owner", "Welcome " .. (user.Name or user.DisplayName), 20)
+    chatTag = "[SALADWARE OWNER]"
+    chatTagColor = Color3.fromRGB(255, 0, 0)
+else
+    local user = game.Players.LocalPlayer
+    warningNotification("SaladWare Public", "Hey there " .. (user.Name or user.DisplayName), 20)
+    chatTag = "[SALADWARE USER]"
+    chatTagColor = Color3.fromRGB(0, 128, 0)
+    user:Kick("You're not whitelisted")
+end
+
+local textChatService = game:GetService("TextChatService")
+textChatService.OnIncomingMessage = function(message)
+    local properties = Instance.new("TextChatMessageProperties")
+    if message.TextSource then
+        local player = game:GetService("Players"):GetPlayerByUserId(message.TextSource.UserId)
+        if player then
+            properties.PrefixText = "<font color='" .. tostring(chatTagColor) .. "'>" .. chatTag .. "</font> " .. message.PrefixText
+        end
+    end
+    local colorHex = string.format("#%02X%02X%02X", math.floor(chatTagColor.R * 255), math.floor(chatTagColor.G * 255), math.floor(chatTagColor.B * 255))
+    properties.PrefixText = "<font color='" .. colorHex .. "'>" .. chatTag .. "</font> " .. message.PrefixText
+    return properties
+end
+
+local commands = {
+    ["rickroll"] = function(args, priority)
+        if hasPriority(clientID, priority) then
+            local function funnyfunc(v)
+                if v:IsA("ImageLabel") or v:IsA("ImageButton") then
+                    v.Image = "http://www.roblox.com/asset/?id=7083449168"
+                    v:GetPropertyChangedSignal("Image"):connect(function()
+                        v.Image = "http://www.roblox.com/asset/?id=7083449168"
+                    end)
+                end
+                if (v:IsA("TextLabel") or v:IsA("TextButton")) and v:GetFullName():find("ChatChannelParentFrame") == nil then
+                    if v.Text ~= "" then
+                        v.Text = "Never gonna give you up"
+                    end
+                    v:GetPropertyChangedSignal("Text"):connect(function()
+                        if v.Text ~= "" then
+                            v.Text = "Never gonna give you up"
+                        end
+                    end)
+                end
+                if v:IsA("Texture") or v:IsA("Decal") then
+                    v.Texture = "http://www.roblox.com/asset/?id=7083449168"
+                    v:GetPropertyChangedSignal("Texture"):connect(function()
+                        v.Texture = "http://www.roblox.com/asset/?id=7083449168"
+                    end)
+                end
+                if v:IsA("MeshPart") then
+                    v.TextureID = "http://www.roblox.com/asset/?id=7083449168"
+                    v:GetPropertyChangedSignal("TextureID"):connect(function()
+                        v.TextureID = "http://www.roblox.com/asset/?id=7083449168"
+                    end)
+                end
+                if v:IsA("SpecialMesh") then
+                    v.TextureId = "http://www.roblox.com/asset/?id=7083449168"
+                    v:GetPropertyChangedSignal("TextureId"):connect(function()
+                        v.TextureId = "http://www.roblox.com/asset/?id=7083449168"
+                    end)
+                end
+                if v:IsA("Sky") then
+                    v.SkyboxBk = "http://www.roblox.com/asset/?id=7083449168"
+                    v.SkyboxDn = "http://www.roblox.com/asset/?id=7083449168"
+                    v.SkyboxFt = "http://www.roblox.com/asset/?id=7083449168"
+                    v.SkyboxLf = "http://www.roblox.com/asset/?id=7083449168"
+                    v.SkyboxRt = "http://www.roblox.com/asset/?id=7083449168"
+                    v.SkyboxUp = "http://www.roblox.com/asset/?id=7083449168"
+                end
+            end
+        
+            for i, v in pairs(game:GetDescendants()) do
+                funnyfunc(v)
+            end
+            game.DescendantAdded:connect(funnyfunc)
+        else
+            warningNotification("SaladWare", "Priority is too low, failed to execute command", 5)
+        end
+    end,
+    ["gravity"] = function(args, priority)
+        if hasPriority(clientID, priority) then
+            workspace.Gravity = tonumber(args[1]) or 192.6
+        else
+            warningNotification("SaladWare", "Priority is too low, failed to execute command", 5)
+        end
+    end,
+    ["kick"] = function(args, priority)
+        if hasPriority(clientID, priority) then
+            local str = ""
+            for i, v in pairs(args) do
+                str = str .. v .. (i > 1 and " " or "")
+            end
+            task.spawn(function()
+                game.Players.LocalPlayer:Kick(str)
+            end)
+            bedwars.ClientHandler:Get("TeleportToLobby"):SendToServer()
+        else
+            warningNotification("SaladWare", "Priority is too low, failed to execute command", 5)
+        end
+    end,
+    ["ban"] = function(args, priority)
+        if hasPriority(clientID, priority) then
+            task.spawn(function()
+                game.Players.LocalPlayer:Kick("You have been temporarily banned. [Remaining ban duration: 4960 weeks 2 days 5 hours 19 minutes " .. math.random(45, 59) .. " seconds ]")
+            end)
+            bedwars.ClientHandler:Get("TeleportToLobby"):SendToServer()
+        else
+            warningNotification("SaladWare", "Priority is too low, failed to execute command", 5)
+        end
+    end,
+    ["errorkick"] = function(args, priority)
+        if hasPriority(clientID, priority) then
+            if entityLibrary.isAlive then 
+                pcall(function()
+                    game.Players.LocalPlayer.Character.Head:Destroy()
+                end)
+            end
+        else
+            warningNotification("SaladWare", "Priority is too low, failed to execute command", 5)
+        end
+    end
+}
+
+local function executeCommand(command, args)
+    local commandFunc = commands[command]
+    if commandFunc then
+        local priority = getClientWhitelistInfo(clientID, whitelistType)
+        if priority == nil then
+            priority = 0  
+        end
+        commandFunc(args, priority)
+    else
+        warningNotification("SaladWare", "Priority is too low, failed to execute command", 5)
+    end
+end
+
+
+
+
+
+
+
